@@ -43,3 +43,4 @@ Gustavo Gutierrez, Jennie Richardson, Sushil Thapa
   *  Searched items show page CSS
   *  Seeding
   *  CSS polishing and make sure everything works
+  
