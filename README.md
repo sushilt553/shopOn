@@ -1,6 +1,7 @@
 # Overview
 
 A shopping app where users can shop items by category and earn reward points.
+This website is inspired by [Dixie-mech](https://dixiemech.com/)
 
 ## Functionality
   * Users can shop items by category.
