@@ -14,9 +14,11 @@ MVP
 5. Rewards & CSS polishing (03/20/2020 - 03/20/2020, 1 day)
 
 Technologies
+
 ShopOn is built using React, Redux, and Express on top of a MongoDB database.
 
 Group Members
+
 Gustavo Gutierrez, Jennie Richardson, Sushil Thapa
 
 Work breakdown
