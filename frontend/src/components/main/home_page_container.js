@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import HomePage from './home_page';
-import { logoutUser } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 
 const mapDispatchToProps = dispatch => {
     return {
-        logout: () => dispatch(logoutUser())
+        logout: () => dispatch(logout())
     }
 }
 

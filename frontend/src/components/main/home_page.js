@@ -2,6 +2,11 @@ import React from 'react';
 
 class HomePage extends React.Component{
 
+    constructor(props){
+        super(props);
+        // this.logout = this.logout.bind(this);
+    }
+
     render (){
         return (
             <div>

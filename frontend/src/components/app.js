@@ -9,8 +9,8 @@ import HomePageContainer from './main/home_page_container';
 
 const App = () => (
   <Switch>
-    <ProtectedRoute exact path="/home" component={HomePageContainer} />
     <AuthRoute exact path="/" component={SplashPage} />
+    <ProtectedRoute exact path="/home" component={HomePageContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
   </Switch>
