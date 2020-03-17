@@ -18,13 +18,13 @@ router.get(
 router.post(
     "/",
     passport.authenticate("jwt", { session: false }),
-    (req, res) => {
+    async(req, res) => {
         
         let category;
-        let findCategory = Category.findOne({ name: req.body.category });
+        let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {
             category = new Category(req.body.category);
-            category.save();
+            await category.save();
         }else{
             category = findCategory;
         }
