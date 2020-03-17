@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: bold;
 }
 
 .nav-comp-1 {
@@ -10,12 +11,25 @@
     justify-content: space-between;
 }
 
+.nav-comp-1>a {
+    color: #ef3231;
+}
+
 .nav-comp-2 {
     display: flex;
     width: 20%;
     justify-content: space-between;
 }
 
-.nav-home {
-    /* margin-right: 10px; */
+.nav-comp-2>a {
+    color: #7e6c5d
+}
+
+.nav-comp-2>.cart {
+    color: #ef3231;
+}
+
+.nav-comp-2>.account:hover,
+.nav-comp-2>.search:hover {
+    color: #ef3231;
 }

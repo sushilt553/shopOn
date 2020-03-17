@@ -21,11 +21,11 @@ class Navbar extends React.Component {
                     <Link className="nav-home" to={"/"}>HOME</Link>
                     <Link className="nav-shop">SHOP</Link> 
                 </section>
-                <h2 className="nav-header">SHOPON</h2>
+                <Link to={"/"}><h1 className="nav-header">SHOP-ON</h1></Link>
                 <section className="nav-comp-2">
-                    <p className="account">ACCOUNT</p>
-                    <p className="search">SEARCH</p>
-                    <p className="cart">CART</p>
+                    <Link className="account" to={"/login"}>ACCOUNT</Link>
+                    <Link className="search">SEARCH</Link>
+                    <Link className="cart">CART</Link>
                 </section>
                 {/* <section className="nav-section">
                     {navComponents}
