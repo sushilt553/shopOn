@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./login_form.css";
 
 class LoginForm extends React.Component {
@@ -56,27 +56,47 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              className="login-form-username"
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+        <div className="login-form-container">
+          <div className="login-form">
+            <div className="login-form-header-container">
+              <div className="login-form-header">
+                <h1 className="login-form-title">Login</h1>
+                <p className="login-form-message">
+                  Please enter your username and password
+                </p>
+              </div>
+            </div>
+              <form onSubmit={this.handleSubmit}>
+                <div>
+                  <input
+                    className="login-form-input"
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    placeholder="Username"
+                  />
+                  <br />
+                  <input
+                    className="login-form-input"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                  />
+                  <br />
+                  <input 
+                    className="login-form-submit"
+                    type="submit" 
+                    value="Login" 
+                  />
+                  {this.renderErrors()}
+                </div>
+              </form>
+              <div className="login-form-lower-message">
+                Don't have an account? <Link to="/signup">Create one</Link>
+              </div>
           </div>
-        </form>
+        </div>
       </div>
     );
   }
