@@ -81,7 +81,7 @@ class SignupForm extends React.Component {
             <br/>
               <input className="signup-form-submit"
                 type = "submit"
-                value = "Sign Up" />
+                value = "CREATE MY ACCOUNT" />
               <div className="signup-errors">
                 { this.renderErrors() } 
               </div>
