@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup_form.css'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -55,31 +56,37 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form className="signup-form-body" onSubmit={this.handleSubmit}>
+          <h1>ACCOUNT SIGN UP</h1>
+          <p>Please fill in the information below:</p>
           <div className="signup-form">
-            <br />
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            />
-            <br />
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+            <br/>
+              <input className="signup-info" type = "text"
+                value = { this.state.username }
+                onChange = { this.update('username') }
+                placeholder = "Username"
+                required />
+            <br/>
+              <input className="signup-info" type = "text"
+                value = { this.state.email }
+                onChange = { this.update('email') }
+                placeholder = "Email"
+                required />
+            <br/>
+              <input className="signup-info" type = "password"
+                value = { this.state.password }
+                onChange = { this.update('password') }
+                placeholder = "Password (7 - 30 characters)"
+                required />
+            <br/>
+              <input className="signup-form-submit"
+                type = "submit"
+                value = "CREATE MY ACCOUNT" />
+              <div className="signup-errors">
+                { this.renderErrors() } 
+              </div>
+          </div>  
+        </form > 
       </div>
     );
   }
