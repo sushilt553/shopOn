@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './signup_form.css'
 
 class SignupForm extends React.Component {
@@ -82,6 +82,8 @@ class SignupForm extends React.Component {
               <input className="signup-form-submit"
                 type = "submit"
                 value = "CREATE MY ACCOUNT" />
+
+              <span className="signup-lower-message">Already have an account? <Link className="signup-login-link" to={"/login"}>Login</Link></span>
               <div className="signup-errors">
                 { this.renderErrors() } 
               </div>

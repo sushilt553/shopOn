@@ -55,7 +55,6 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
         <div className="login-form-container">
           <div className="login-form">
             <div className="login-form-header-container">
@@ -74,6 +73,7 @@ class LoginForm extends React.Component {
                     value={this.state.username}
                     onChange={this.update("username")}
                     placeholder="Username"
+                    required
                   />
                   <br />
                   <input
@@ -82,6 +82,7 @@ class LoginForm extends React.Component {
                     value={this.state.password}
                     onChange={this.update("password")}
                     placeholder="Password"
+                    required
                   />
                   <br />
                   <input 
@@ -93,11 +94,10 @@ class LoginForm extends React.Component {
                 </div>
               </form>
               <div className="login-form-lower-message">
-                Don't have an account? <Link to="/signup">Create one</Link>
+                Don't have an account? <Link className="create-one" to="/signup">Create one</Link>
               </div>
           </div>
         </div>
-      </div>
     );
   }
 }
