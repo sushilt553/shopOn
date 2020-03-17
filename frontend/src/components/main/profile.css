@@ -1,0 +1,52 @@
+.profile-head {
+    display: flex;
+    flex-direction: column;
+    margin: 70px 100px;
+}
+
+.profile-logout,
+.acc-user {
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.go-shop {
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    background-color: #6f8ff6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: whitesmoke;
+}
+
+.my-orders {
+    letter-spacing: 0.1em;
+    margin-top: 50px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #cfcac3;
+}
+
+.user-username {
+    font-style: italic;
+    color: #7e6c5d;
+    font-size: 20px;
+}
+
+.profile-logout,
+.my-account,
+.my-orders {
+    font-weight: bold;
+}
+
+.profile-logout,
+.my-orders {
+    color: #7e6c5d;
+}
+
+.my-account {
+    color: #6f8ff6;
+    margin-bottom: 20px;
+    font-size: 25px;
+}

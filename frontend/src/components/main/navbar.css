@@ -11,9 +11,10 @@
 .nav-header {
     font-size: 40px;
     font-family: 'Bungee Shade', cursive;
-    background-color: #6f8ff6;
+    /* background-color: #6f8ff6; */
     letter-spacing: 0.3em;
-    color: whitesmoke;
+    color: #6f8ff6;
+    /* color: whitesmoke; */
     padding: 3px 7px;
     border-radius: 4px;
 }
