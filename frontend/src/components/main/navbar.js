@@ -17,10 +17,19 @@ class Navbar extends React.Component {
 
         return (
             <div className="nav-main">
-                <h2 className="nav-header">Shopon</h2>
-                <section className="nav-section">
-                    {navComponents}
+                <section className="nav-comp-1">
+                    <Link className="nav-home" to={"/"}>HOME</Link>
+                    <Link className="nav-shop">SHOP</Link> 
                 </section>
+                <h2 className="nav-header">SHOPON</h2>
+                <section className="nav-comp-2">
+                    <p className="account">ACCOUNT</p>
+                    <p className="search">SEARCH</p>
+                    <p className="cart">CART</p>
+                </section>
+                {/* <section className="nav-section">
+                    {navComponents}
+                </section> */}
                 
             </div>
         )

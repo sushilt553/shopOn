@@ -1,0 +1,21 @@
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-comp-1 {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.nav-comp-2 {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.nav-home {
+    /* margin-right: 10px; */
+}
