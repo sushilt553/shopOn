@@ -3,7 +3,7 @@ const router = express.Router();
 const validateProductInput = require("../../validation/products");
 const Product = require("../../models/Product");
 const passport = require('passport');
-// const jwt = require("jsonwebtoken");
+const Category = require('../../models/Category');
 
 router.get(
     "/",
