@@ -1,0 +1,27 @@
+.splash-body {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  flex-grow: 1;
+  margin: 0 auto;
+  justify-content: center;
+  background-image: url('../../images/block_on_keyboard.jpg');
+  /* background-image: url('../../images/Surprise_Gift.jpg'); */
+  /* background-image: url('../../images/west_side_market.jpeg'); */
+  /* background-image: url('../../images/shopping-cart-hand-drawn-shopping-items-shopping-cart-hand-drawn-shopping-items.jpg'); */
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.splash-title {
+  /* font-family: "Source Sans Pro", sans-serif; */
+  font-family: 'Bungee Inline', cursive;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 100px;
+  letter-spacing: .02em;
+  /* color: antiquewhite; */
+  color: #6f8ff6;
+  padding-top: 500px;
+}
