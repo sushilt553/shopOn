@@ -50,8 +50,9 @@ input[type="submit"] {
 }
 
 .login-form {
-  max-width: 400px;
+  width: 400px;
 }
+
 .login-form-header-container {
   width: 100%;
   display: flex;
@@ -83,6 +84,7 @@ input[type="submit"] {
   border: 1px solid #86b3d1;
   margin-top: 15px;
   color: #aaa0a0;
+  box-sizing: border-box;
 }
 
 ::placeholder {
@@ -99,6 +101,7 @@ input[type="submit"] {
   text-transform: uppercase;
   color: #aaa0a0;
   font-weight: 700;
+  box-sizing: border-box;
 }
 
 .login-form-lower-message {
