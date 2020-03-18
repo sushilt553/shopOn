@@ -4,13 +4,14 @@ import ProductEditForm from './product_edit_form';
 const mSP = (state, ownProps) => {
   return {
     product: ownProps.product,
-    formType: 'UPDATE PRODUCT INFO'
+    formType: 'Update Your Product'
   }
 };
 
 const mDP = dispatch => {
   return {
-    processForm
+    processForm: product => dispatch(updateProduct(product)),
+    fetchProduct: productId => dispatch(fetchProduct(productId))
   }
 };
 
