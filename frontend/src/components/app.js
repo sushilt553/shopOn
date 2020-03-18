@@ -9,6 +9,8 @@ import ProfileContainer from "./main/profile_container";
 import ProductsIndexContainer from "./products/products_index_container";
 import NavbarContainer from './main/navbar_container';
 import ProductCreateContainer from "./products/product_create_container";
+import ProductShowPageContainer from "./products/product_show_container";
+import ProductEditContainer from "./products/product_edit_container";
 
 const App = () => (
 
@@ -16,6 +18,8 @@ const App = () => (
     <NavbarContainer />
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/products/:id/edit" component={ProductEditContainer} />
+      <ProtectedRoute exact path={`/products/:id`} component={ProductShowPageContainer} />
       <ProtectedRoute exact path="/products" component={ProductsIndexContainer} />
       <ProtectedRoute exact path="/products/new" component={ProductCreateContainer} />
   

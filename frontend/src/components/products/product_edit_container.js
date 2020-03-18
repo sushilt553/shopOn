@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import ProductEditForm from './product_edit_form';
+import {fetchProduct, updateProduct} from '../../actions/product_actions';
 
 const mSP = (state, ownProps) => {
+  const id = ownProps.match.params.id
+  const product = state.entities.products[id]
+  debugger;
   return {
-    product: ownProps.product,
+    product: product,
     formType: 'Update Your Product'
   }
 };

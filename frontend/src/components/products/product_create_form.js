@@ -38,7 +38,7 @@ class ProductCreateForm extends React.Component {
             <label>Price:
             <input 
               onChange={this.update('price')}
-              value={this.state.value}
+              value={this.state.price}
               type="number" 
               placeholder="Price" 
               required

@@ -1,34 +1,35 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class ProductShow extends React.Component {
 
   constructor(props){
     super(props);
     //state
-    this.editProduct = this.editProduct.bind(this);
+    // this.editProduct = this.editProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchProduct(this.props.match.params.productId)
+    this.props.fetchProduct(this.props.product._id)
   }
 
   //re render once product is updated
-  componentDidUpdate(oldProps){
-    if ( this.props.product !== oldProps.product && this.props.track ) {
+  // componentDidUpdate(oldProps){
+  //   if ( this.props.product !== oldProps.product && this.props.track ) {
 
-    }
-  }
+  //   }
+  // }
 
   //redirect to edit form and pass product info to form?
-  editProduct(e) {
-    e.preventDefault();
-    this.props.updateProduct(this.props.product.id)
-  }
+  // editProduct(e) {
+  //   e.preventDefault();
+  //   this.props.updateProduct(this.props.product._id)
+  // }
 
   deleteProduct(e) {
     e.preventDefault();
-    this.props.deleteProduct(this.props.product.id)
+    this.props.deleteProduct(this.props.product._id)
       .then(() => this.props.history.push('/products'))
   }
 
@@ -44,16 +45,18 @@ class ProductShow extends React.Component {
         </div>
         <div className="edit-product-btns">
           {
-            this.props.currentUser ? (
-              <>
-                <button className="edit-btn" onClick={this.editProduct}>
+            // this.props.currentUser ? (
+            <>
+              <Link to={`/products/${product._id}/edit`}>
+                <button className="edit-btn">
                   Edit Product
                 </button>
-                <button className="delete-btn" onClick={this.deleteProduct}>
-                  Delete Product
-                </button>
-              </>
-            ) : null
+              </Link>
+              <button className="delete-btn" onClick={this.deleteProduct}>
+                Delete Product
+              </button>
+            </>
+            // ) : null
           }
         </div>
         <div className="product-info">
@@ -65,7 +68,7 @@ class ProductShow extends React.Component {
           <button>Add to cart</button>
         </div>
       </div>
-    )
+    );
   }
 }
 
