@@ -5,7 +5,7 @@ export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 
 export const receiveAllProducts = products => {
-    debugger;
+    // debugger;
     return {
         type: RECEIVE_ALL_PRODUCTS,
         products
@@ -13,7 +13,7 @@ export const receiveAllProducts = products => {
 }
 
 export const receiveProduct = product => {
-    debugger;
+    // debugger;
     return {
         type: RECEIVE_PRODUCT,
         product
@@ -21,7 +21,7 @@ export const receiveProduct = product => {
 }
 
 export const receiveProductErrors = errors => {
-    debugger;
+    // debugger;
     return {
         type: RECEIVE_PRODUCT_ERRORS,
         errors

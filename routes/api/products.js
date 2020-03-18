@@ -44,7 +44,7 @@ router.post(
             category: req.body.category
         });
 
-        newProduct.save().then(product => res.json(product));
+        newProduct.save().then((product) => res.json(product))
     }
 );
 
