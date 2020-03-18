@@ -1,0 +1,73 @@
+.product-create-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-size: auto;
+}
+
+.product-form-body {
+  margin-top: 10%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+}
+
+.product-form-body h1 {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6f8ff6;
+  letter-spacing: 0.1em;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 1.65;
+  font-size: 16px;
+  align-items: left;
+  margin-top: 35px;
+  color: #7e6c5d;
+}
+
+.product-info input {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 5px;
+  border: 1px solid #6f8ff6;
+  width: 100%;
+  background: transparent;
+}
+
+.product-info textarea {
+  padding-top: 10px;
+  padding-left: 12px;
+  border: 1px solid #6f8ff6;
+  border-radius: 5px;
+  height: 100px;
+}
+
+
+.create-product-submit{
+  border: 1px solid #6f8ff6;
+  background-color: #6f8ff6;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  padding: 12px 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.create-product-submit:hover {
+  background-color: #0b2fa8;
+}
