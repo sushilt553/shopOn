@@ -7,6 +7,7 @@ class Profile extends React.Component{
     render (){
         return (
             <div className="profile-head">
+                <Link to="/products/new"><button>Create a new Product</button></Link>
                 <button className="profile-logout" onClick={this.props.logout}>LOGOUT</button>
                 <section className="acc-user">
                     <h1 className="my-account">MY ACCOUNT</h1>

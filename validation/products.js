@@ -4,12 +4,12 @@ const validNumber = require("./valid-number");
 
 module.exports = function validateProductInput(data) {
   let errors = {};
-
+  
+  debugger;
   data.name = validText(data.name) ? data.name : "";
   data.description = validText(data.description) ? data.description : "";
-  data.price = validNumber(data.price) ? data.price : "";
-  data.category = validNumber(data.category) ? data.category : "";
-
+  data.price = validNumber(parseInt(data.price)) ? data.price : "";
+  data.category = validNumber(parseInt(data.category)) ? data.category : "";
   if (!Validator.isLength(data.description, { min: 10, max: 140 })) {
     errors.description = "Description must be between 10 and 140 characters";
   }

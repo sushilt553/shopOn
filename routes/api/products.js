@@ -7,7 +7,7 @@ const Category = require('../../models/Category');
 
 router.get(
     "/",
-    passport.authenticate("jwt", { session: false }),
+    // passport.authenticate("jwt", { session: false }),
     (req, res) => {
         Product.find().limit(10)
             .then(products => res.json(products))
@@ -17,13 +17,13 @@ router.get(
 
 router.post(
     "/",
-    passport.authenticate("jwt", { session: false }),
+    // passport.authenticate("jwt", { session: false }),
     async(req, res) => {
         
         let category;
         let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {
-            category = new Category(req.body.category);
+            category = new Category( {name: req.body.category} );
             await category.save();
         }else{
             category = findCategory;

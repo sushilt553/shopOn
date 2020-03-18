@@ -15,8 +15,8 @@ class ProductCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(product)
-      .then(() => this.props.history.push('/'));
+    this.props.processForm(this.state)
+      .then(() => this.props.history.push('/products'));
   }
 
   render() {
@@ -25,36 +25,43 @@ class ProductCreateForm extends React.Component {
         <section className="product-form-body">
           <h1>Create a New Product</h1>
           <form onSubmit={this.handleSubmit} className="product-info">
-            <label>Product Name:</label>
+            <label>Product Name:
             <input 
               onChange={this.update('name')}
               value={this.state.name}
               type="text" 
               placeholder="Product Name" 
-              required />
+              required
+               />
+            </label>
           <br/>
-            <label>Price:</label>
+            <label>Price:
             <input 
               onChange={this.update('price')}
               value={this.state.value}
               type="number" 
               placeholder="Price" 
-              required />
+              required
+               />
+            </label>
           <br/>
-            <label>Category:</label>
+            <label>Category:
             <input
               onChange={this.update('category')}
               value={this.state.category}
               type="text"
               placeholder="Category"
-              required />
+              required
+               />
+            </label>
           <br/>
-            <label for="product-description">Description:</label>
+            <label>Description:
             <textarea 
               onChange={this.update('description')}
               id="product-description" 
-              value="{this.state.description}" 
+              value={this.state.description}
               placeholder="Please describe your product in 10 - 140 characters." />
+            </label>
           <br/>
             <button type="submit" className="create-product-submit">SUBMIT</button>
           </form>
