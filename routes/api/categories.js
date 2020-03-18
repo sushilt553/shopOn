@@ -31,3 +31,5 @@ router.post(
     newCategory.save().then(category => res.json(category));
   }
 );
+
+module.exports = router;

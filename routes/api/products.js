@@ -47,3 +47,5 @@ router.post(
         newProduct.save().then(product => res.json(product));
     }
 );
+
+module.exports = router;
