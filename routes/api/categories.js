@@ -3,7 +3,6 @@ const router = express.Router();
 const validateCategoryInput = require("../../validation/category");
 const Category = require("../../models/Category");
 const passport = require('passport');
-// const jwt = require("jsonwebtoken");
 
 router.get(
   "/", 
