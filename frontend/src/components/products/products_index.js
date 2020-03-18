@@ -3,6 +3,10 @@ import ProductIndexItem from './products_index_item';
 
 class ProductsIndex extends React.Component {
 
+    componentDidMount(){
+        this.props.fetchAllProducts();
+    }
+
     render(){
         if (!this.props.products){
             return null;
