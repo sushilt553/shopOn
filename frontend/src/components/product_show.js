@@ -11,9 +11,15 @@ class ProductShow extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId)
   }
 
+  //re render once product is updated
+  componentDidUpdate(oldProps){
+    if ( this.props.product !== oldProps.product && this.props.track ) {
+
+    }
+  }
+
   deleteProduct(e) {
     e.preventDefault();
-
     this.props.deleteProduct(this.props.product.id)
       .then(() => this.props.history.push('/products'))
   }
