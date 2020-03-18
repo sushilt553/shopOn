@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const createProduct = productData => {
     return axios.post("/api/products", productData);
 };
