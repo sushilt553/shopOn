@@ -3,54 +3,60 @@ import {withRouter} from 'react-router-dom';
 import './product_create.css';
 
 class ProductCreateForm extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
+    this.state = this.props.product;
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
 
-  // update(field) {
-  //   return e => this.setState({ [field]: e.currentTarget.value });
-  // }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.processForm(product)
+      .then(() => this.props.history.push('/'));
+  }
 
   render() {
     return(
       <main className="product-create-main">
         <section className="product-form-body">
           <h1>Create a New Product</h1>
-          <form className="product-info">
+          <form onSubmit={this.handleSubmit} className="product-info">
             <label>Product Name:</label>
             <input 
+              onChange={this.update('name')}
+              value={this.state.name}
               type="text" 
-              value="" 
               placeholder="Product Name" 
               required />
           <br/>
             <label>Price:</label>
             <input 
+              onChange={this.update('price')}
+              value={this.state.value}
               type="number" 
-              value="" 
               placeholder="Price" 
               required />
           <br/>
             <label>Category:</label>
             <input
+              onChange={this.update('category')}
+              value={this.state.category}
               type="text"
-              value=""
               placeholder="Category"
               required />
           <br/>
             <label for="product-description">Description:</label>
             <textarea 
+              onChange={this.update('description')}
               id="product-description" 
-              value="" 
+              value="{this.state.description}" 
               placeholder="Please describe your product in 10 - 140 characters." />
           <br/>
-            <button className="create-product-submit">SUBMIT</button>
+            <button type="submit" className="create-product-submit">SUBMIT</button>
           </form>
         </section>
       </main>
