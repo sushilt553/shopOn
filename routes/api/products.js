@@ -58,6 +58,34 @@ router.post(
     }
 );
 
+router.patch(
+    "/:id",
+    async(req, res) => {
+        // debugger;
+        const product = Product.findOne({_id: req.params.id})
+
+        let category;
+        let findCategory = await Category.findOne({ name: req.body.category });
+        if (!findCategory) {
+            category = new Category( {name: req.body.category} );
+            await category.save();
+        }else{
+            category = findCategory;
+        }
+
+        req.body.category = category.id;
+
+        const { errors, isValid } = validateProductInput(req.body);
+
+        if (!isValid) {
+          return res.status(400).json(errors);
+        }
+
+        product.update(req.body)
+        .then(product => res.json(product))
+    }
+)
+
 router.delete(
     "/:id",
     (req, res) => {

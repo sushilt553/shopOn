@@ -5,7 +5,7 @@ import {fetchProduct, updateProduct} from '../../actions/product_actions';
 const mSP = (state, ownProps) => {
   const id = ownProps.match.params.id
   const product = state.entities.products[id]
-  debugger;
+  // debugger;
   return {
     product: product,
     formType: 'Update Your Product'

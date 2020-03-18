@@ -13,6 +13,7 @@ export const fetchProduct = productId => {
 }
 
 export const updateProduct = productData => {
+    // debugger;
     return axios.patch(`/api/products/${productData._id}`, productData)
 }
 
