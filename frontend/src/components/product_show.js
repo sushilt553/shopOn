@@ -5,6 +5,7 @@ class ProductShow extends React.Component {
   constructor(props){
     super(props);
     //state
+    this.editProduct = this.editProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
   }
 
