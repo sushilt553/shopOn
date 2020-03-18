@@ -11,6 +11,9 @@ const ProductIndexItem = (props) => {
           <br />
           Category: {props.product.category}
           <br />
+          <Link to={`/products/${props.product._id}/edit`}>
+            <button className="edit-btn">Edit Product</button>
+          </Link>
           <button onClick={() => props.deleteProduct(props.product._id)}>
             Delete
           </button>
