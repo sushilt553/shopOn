@@ -11,8 +11,6 @@ class Navbar extends React.Component {
         :
         <Link className="account" to={"/login"}>ACCOUNT</Link>
 
-        
-
         return (
             <div className="nav-main">
                 <section className="nav-comp-1">
