@@ -17,7 +17,8 @@ router.get(
     res.json({
       id: req.user.id,
       username: req.user.username,
-      email: req.user.email
+      email: req.user.email,
+      isAdmin: req.user.isAdmin
     });
   }
 );
@@ -38,7 +39,7 @@ router.post("/signup", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -48,7 +49,7 @@ router.post("/signup", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, username: user.username };
+              const payload = { id: user.id, username: user.username, isAdmin: user.isAdmin };
 
               jwt.sign(
                 payload,
@@ -88,7 +89,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, username: user.username };
+        const payload = { id: user.id, username: user.username, isAdmin: user.isAdmin };
 
         jwt.sign(
           payload,
