@@ -1,10 +1,24 @@
 import React from 'react';
+import ProductIndexItem from './products_index_item';
 
 class ProductsIndex extends React.Component {
 
+    componentDidMount(){
+        this.props.fetchAllProducts();
+    }
+
     render(){
+        if (!this.props.products){
+            return null;
+        }
+
+        const products = this.props.products.map(product => <ProductIndexItem product={product}/>)
+
         return(
-            <h1>PRODUCTS</h1>
+            <div>
+                <h1>PRODUCTS</h1>
+                {products}
+            </div>
         )
     }
 }
