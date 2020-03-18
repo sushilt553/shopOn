@@ -8,6 +8,9 @@ const ProductIndexItem = (props) => {
             Price: {props.product.price}
             <br/>
             Category: {props.product.category}
+            <br/>
+            <button onClick={() => props.deleteProduct(props.product._id)}>Delete</button>
+            <br />
         </li>
     )
 }

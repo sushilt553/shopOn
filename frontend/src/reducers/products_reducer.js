@@ -3,7 +3,7 @@ import {RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT} from '../actions/
 const productsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {};
-
+    // debugger;
     switch (action.type) {
         case RECEIVE_ALL_PRODUCTS:
             action.products.map(product => newState[product._id] = product);

@@ -13,9 +13,10 @@ export const fetchProduct = productId => {
 }
 
 export const updateProduct = productData => {
-    return axios.patch(`/api/products/${productData.id}`, productData)
+    return axios.patch(`/api/products/${productData._id}`, productData)
 }
 
 export const deleteProduct = productId => {
+    debugger;
     return axios.delete(`/api/products/${productId}`)
 }
