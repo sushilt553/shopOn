@@ -15,6 +15,16 @@ router.get(
     }
 )
 
+router.get(
+    "/:id",
+    (req, res) => {
+        Product.findById(req.params.id)
+        .then(product => res.json(product))
+        .catch(err => 
+            res.status(404).json({noProductFound: 'No product found from the database'}));
+    }
+)
+
 router.post(
     "/",
     // passport.authenticate("jwt", { session: false }),
@@ -47,5 +57,14 @@ router.post(
         newProduct.save().then((product) => res.json(product))
     }
 );
+
+router.delete(
+    "/:id",
+    (req, res) => {
+        Product.remove({_id: req.params.id})
+        .then(() => res.json({msg: 'Success'}))
+    }
+)
+
 
 module.exports = router;
