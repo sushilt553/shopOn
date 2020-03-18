@@ -4,6 +4,7 @@ class ProductShow extends React.Component {
 
   constructor(props){
     super(props);
+    //state
     this.deleteProduct = this.deleteProduct.bind(this);
   }
 
@@ -16,6 +17,12 @@ class ProductShow extends React.Component {
     if ( this.props.product !== oldProps.product && this.props.track ) {
 
     }
+  }
+
+  //redirect to edit form and pass product info to form?
+  editProduct(e) {
+    e.preventDefault();
+    this.props.updateProduct(this.props.product.id)
   }
 
   deleteProduct(e) {
@@ -36,16 +43,16 @@ class ProductShow extends React.Component {
         </div>
         <div className="edit-product-btns">
           {
-            this.props.currentUser.admin ? (
+            this.props.currentUser ? (
               <>
-                <button className="edit-btn" onClick={}>
+                <button className="edit-btn" onClick={this.editProduct}>
                   Edit Product
                 </button>
                 <button className="delete-btn" onClick={this.deleteProduct}>
                   Delete Product
                 </button>
               </>
-            ) : <div> </div>
+            ) : null
           }
         </div>
         <div className="product-info">
