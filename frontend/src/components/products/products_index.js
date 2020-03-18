@@ -12,7 +12,12 @@ class ProductsIndex extends React.Component {
             return null;
         }
 
-        const products = this.props.products.map(product => <ProductIndexItem product={product}/>)
+        const products = this.props.products.map(product => 
+        <ProductIndexItem 
+        key={product._id}
+        product={product}
+        deleteProduct={this.props.deleteProduct}
+        />)
 
         return(
             <div>

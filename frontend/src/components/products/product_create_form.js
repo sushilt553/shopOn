@@ -23,7 +23,7 @@ class ProductCreateForm extends React.Component {
     return(
       <main className="product-create-main">
         <section className="product-form-body">
-          <h1>Create a New Product</h1>
+          <h1>{this.props.formType}</h1>
           <form onSubmit={this.handleSubmit} className="product-info">
             <label>Product Name:
             <input 
@@ -56,6 +56,7 @@ class ProductCreateForm extends React.Component {
             </label>
           <br/>
             <label>Description:
+              <br/>
             <textarea 
               onChange={this.update('description')}
               id="product-description" 
