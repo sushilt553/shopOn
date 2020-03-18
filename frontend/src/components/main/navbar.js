@@ -5,16 +5,6 @@ import Dropdown from './dropdown';
 
 class Navbar extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.handleClick = this.handleClick.bind(this)
-    // }
-
-    // handleClick(e) {
-    //     e.preventDefault();
-    //     return <Dropdown />
-    // }
-
     render() {
         const navComponents = this.props.currentUser ? 
         <>
@@ -30,8 +20,6 @@ class Navbar extends React.Component {
             <div className="nav-main">
                 <section className="nav-comp-1">
                     <Link className="nav-home" to={"/"}>HOME</Link>
-                    {/* <Link className="nav-shop">SHOP</Link>  */}
-                    {/* <div onClick={this.handleClick}>Categories</div> */}
                     <Dropdown />
                 </section>
                 <Link to={"/"}><h1 className="nav-header">SHOP-ON</h1></Link>

@@ -33,13 +33,12 @@ class Dropdown extends React.Component {
 
   render() {
     return(
-      <div onClick={this.showDropdown}>
+      <div className="dropdown" onClick={this.showDropdown}>
         Categories
         { 
           this.state.show ? (
             <div ref={this.ref} className="dropdown-content">
-              <div className="dropdown-list">
-                <ul>
+                <ul className="dropdown-list">
                   <li>
                     Books
                   </li>
@@ -56,7 +55,6 @@ class Dropdown extends React.Component {
                     Shoes
                   </li>
                 </ul>
-              </div>
             </div>
           ) : null
         }

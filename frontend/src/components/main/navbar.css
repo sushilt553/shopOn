@@ -46,3 +46,35 @@
 .nav-comp-2>.search:hover {
     color: #6f8ff6;
 }
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    color: #6f8ff6;
+    text-transform: uppercase;
+}
+
+.dropdown-content {
+    position: absolute;
+    margin-top: 39px;
+    border-top: 3px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    width: 200px;
+    background-color: #eeebe3;
+    font-weight: 100;
+}
+
+.dropdown-list {
+    line-height: 3;
+    padding: 10px;
+}
+
+.dropdown-list li {
+    padding-left: 30px;
+}
+
+.dropdown-list li:hover {
+    color: #0b2fa8;
+}
