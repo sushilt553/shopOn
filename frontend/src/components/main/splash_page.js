@@ -11,7 +11,7 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-body">
         <div className="splash-title">
-          YOUR FAVORITE THINGS
+          Favorite Things
         </div>
       </div>
     );
