@@ -45,7 +45,7 @@ router.post(
     "/",
     // passport.authenticate("jwt", { session: false }),
     async(req, res) => {
-        
+        // debugger;
         let category;
         let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {
@@ -70,16 +70,18 @@ router.post(
             category: req.body.category
         });
 
-        newProduct.save().then((product) => res.json(product))
+        newProduct.save()
+        .then((product) => res.json(product))
+        .catch((err) => res.json(err))
     }
 );
 
 router.patch(
     "/:id",
     async(req, res) => {
+        const product = await Product.findOne({_id: req.params.id})
+        
         // debugger;
-        const product = Product.findOne({_id: req.params.id})
-
         let category;
         let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {
@@ -99,6 +101,7 @@ router.patch(
 
         product.update(req.body)
         .then(product => res.json(product))
+        .catch(err => res.json(err))
     }
 )
 
