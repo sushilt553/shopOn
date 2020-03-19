@@ -33,10 +33,10 @@ const ProductIndexItem = (props) => {
                 {/* Category: {props.product.category}
                 <br /> */}
               </div>
-                {editDelete}
-              <button className="cart-btn">Add to Cart</button>
             </li>
           </Link>
+            {editDelete}
+            <button className="cart-btn">Add to Cart</button>
         </div>
     );
 }

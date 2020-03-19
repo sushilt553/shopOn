@@ -14,9 +14,24 @@ class ProductCreateForm extends React.Component {
   }
 
   handleSubmit(e) {
+    
     e.preventDefault();
-    this.props.processForm(this.state)
+    
+    if (this.props.formType == 'Update Your Product'){
+      const product = {
+        _id: this.state._id,
+        name: this.state.name,
+        price: this.state.price.toString(),
+        category: this.state.category,
+        description: this.state.description
+      }
+      debugger;
+      this.props.processForm(product)
       .then(() => this.props.history.push('/products'));
+    }else{
+      this.props.processForm(this.state)
+      .then(() => this.props.history.push('/products'));
+    }
   }
 
   componentDidMount() {
@@ -68,7 +83,7 @@ class ProductCreateForm extends React.Component {
               placeholder="Please describe your product in 10 - 140 characters." />
             </label>
           <br/>
-            <button type="submit" className="create-product-submit">SUBMIT</button>
+            <button type="submit" className="create-product-submit">{this.props.formType}</button>
           </form>
         </section>
       </main>

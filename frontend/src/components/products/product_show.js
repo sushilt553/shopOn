@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import './product_show.css'
 
 class ProductShow extends React.Component {
@@ -23,12 +23,6 @@ class ProductShow extends React.Component {
   //   }
   // }
 
-  //redirect to edit form and pass product info to form?
-  // editProduct(e) {
-  //   e.preventDefault();
-  //   this.props.updateProduct(this.props.product._id)
-  // }
-
   deleteProduct(e) {
     e.preventDefault();
     this.props.deleteProduct(this.props.product._id)
@@ -47,7 +41,7 @@ class ProductShow extends React.Component {
         </div>
         <div className="edit-product-btns">
           {
-            // this.props.currentUser ? (
+            this.props.isAdmin ? (
             <>
               <Link to={`/products/${product._id}/edit`}>
                 <button className="edit-btn">
@@ -58,7 +52,7 @@ class ProductShow extends React.Component {
                 Delete Product
               </button>
             </>
-            // ) : null
+            ) : null
           }
         </div>
         <div className="product-info">
@@ -74,4 +68,4 @@ class ProductShow extends React.Component {
   }
 }
 
-export default ProductShow;
+export default withRouter(ProductShow);

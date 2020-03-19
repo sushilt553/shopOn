@@ -5,7 +5,7 @@ import { fetchAllCategories } from '../../actions/category_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.id],
-  currentUser: state.session.user
+  isAdmin: state.session.user.isAdmin
 })
 
 const mapDispatchToProps = dispatch => ({
