@@ -24,7 +24,14 @@ class CategoryProducts extends React.Component{
             return null;
         }
 
-        const products = this.props.categoryProducts.map((product) => <ProductIndexItem key={product._id} product={product}/>)
+        const products = 
+            this.props.categoryProducts.map((product) => 
+                <ProductIndexItem 
+                    key={product._id} 
+                    isAdmin={this.props.isAdmin} 
+                    product={product}
+                />
+            )
 
         return (
             <ul>

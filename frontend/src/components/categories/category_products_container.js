@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     const category = ownProps.match.params.category
     return {
         category: category,
-        categoryProducts: state.entities.categoryProducts
+        categoryProducts: state.entities.categoryProducts,
+        isAdmin: state.session.user.isAdmin
     }
 }
 
