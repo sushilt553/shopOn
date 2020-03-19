@@ -12,7 +12,7 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchProduct(this.props.product._id)
+    this.props.fetchProduct(this.props.match.params.id)
     this.props.fetchAllCategories();
   }
 
