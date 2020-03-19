@@ -16,12 +16,14 @@ class ProductShow extends React.Component {
     this.props.fetchAllCategories();
   }
 
-  //re render once product is updated
-  // componentDidUpdate(oldProps){
-  //   if ( this.props.product !== oldProps.product && this.props.track ) {
+  componentDidUpdate(prevProps) {
+    const currentProduct = this.props.match.params.id;
+    const prevProduct = prevProps.match.params.id;
 
-  //   }
-  // }
+    if (currentProduct !== prevProduct) {
+      this.props.fetchProduct(currentProduct);
+    }
+  }
 
   deleteProduct(e) {
     e.preventDefault();
