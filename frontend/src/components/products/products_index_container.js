@@ -5,7 +5,8 @@ import { fetchAllCategories } from '../../actions/category_actions';
 
 const mapStateToProps = state => {
     return {
-        products: Object.values(state.entities.products)
+        products: Object.values(state.entities.products),
+        isAdmin: state.session.user.isAdmin
     }
 }
 
