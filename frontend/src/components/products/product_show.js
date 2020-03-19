@@ -13,6 +13,7 @@ class ProductShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchProduct(this.props.product._id)
+    this.props.fetchAllCategories();
   }
 
   //re render once product is updated

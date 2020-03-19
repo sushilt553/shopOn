@@ -4,6 +4,22 @@ const validateProductInput = require("../../validation/products");
 const Product = require("../../models/Product");
 const passport = require('passport');
 const Category = require('../../models/Category');
+const {
+  singlePublicFileUpload,
+  multiplePublicFileUpload,
+  singleMulterUpload,
+  multipleMulterUpload
+} = require("../../awsS3");
+
+// multiple public files
+// router.post("/", multipleMulterUpload("images"), async (req, res) => {
+//   const userData = req.body;
+//   userData.images = await multiplePublicFileUpload(req.files);
+//   const user = new User(userData);
+//   await user.save();
+//   res.json(user);
+// });
+
 
 router.get(
     "/",

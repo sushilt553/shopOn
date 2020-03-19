@@ -15,7 +15,7 @@ class Navbar extends React.Component {
             <div className="nav-main">
                 <section className="nav-comp-1">
                     <Link className="nav-home" to={"/"}>HOME</Link>
-                    <Dropdown />
+                    <Dropdown categories={this.props.categories}/>
                 </section>
                 <Link to={"/"}><h1 className="nav-header">SHOP-ON</h1></Link>
                 <section className="nav-comp-2">

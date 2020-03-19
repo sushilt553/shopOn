@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProductEditForm from './product_edit_form';
 import {fetchProduct, updateProduct} from '../../actions/product_actions';
+import { fetchAllCategories } from '../../actions/category_actions';
 
 const mSP = (state, ownProps) => {
   const id = ownProps.match.params.id
@@ -15,7 +16,8 @@ const mSP = (state, ownProps) => {
 const mDP = dispatch => {
   return {
     processForm: product => dispatch(updateProduct(product)),
-    fetchProduct: productId => dispatch(fetchProduct(productId))
+    fetchProduct: productId => dispatch(fetchProduct(productId)),
+    fetchAllCategories: () => dispatch(fetchAllCategories())
   }
 };
 
