@@ -17,6 +17,7 @@ class ProductEditForm extends React.Component {
         product = {product}
         formType = {formType}
         processForm = {processForm}
+        fetchAllCategories = {this.props.fetchAllCategories}
       />
     );
   }

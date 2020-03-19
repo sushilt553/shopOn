@@ -13,13 +13,14 @@ class ProductsIndex extends React.Component {
             return null;
         }
 
-        const products = this.props.products.map(product => 
+        const products = this.props.products.map((product, idx) => 
         <ProductIndexItem 
-        key={product._id}
+        key={idx}
         product={product}
+        isAdmin={this.props.isAdmin}
         deleteProduct={this.props.deleteProduct}
         />)
-
+        
         return(
             <div>
                 <h1>PRODUCTS</h1>
