@@ -12,7 +12,7 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchProduct(this.props.product._id)
+    this.props.fetchProduct(this.props.product._id);
     this.props.fetchAllCategories();
   }
 
@@ -36,32 +36,41 @@ class ProductShow extends React.Component {
     }
     return (
       <div className="product-show-container">
-        <div className="product-image">
+        <div className="product-show-image">
           <img></img>
         </div>
-        <div className="edit-product-btns">
-          {
-            this.props.isAdmin ? (
-            <>
-              <Link to={`/products/${product._id}/edit`}>
-                <button className="edit-btn">
-                  Edit Product
+        <div className="product-show-info">
+          <div className="product-show-description">
+            <h2>{product.name}</h2>
+            <span>{product.price}</span>
+            <p>{product.description}</p>
+          </div>
+          <div className="product-show-edit-btns">
+            {
+              this.props.isAdmin ? (
+              <>
+                <Link to={`/products/${product._id}/edit`}>
+                  <button className="product-show-edit-btn">
+                    Edit Product
+                  </button>
+                </Link>
+                <button 
+                  className="product-show-delete-btn" 
+                  onClick={this.deleteProduct}>
+                  Delete Product
                 </button>
-              </Link>
-              <button className="delete-btn" onClick={this.deleteProduct}>
-                Delete Product
-              </button>
-            </>
-            ) : null
-          }
-        </div>
-        <div className="product-info">
-          <h2>{product.name}</h2>
-          <span>{product.price}</span>
-          <p>{product.description}</p>
-        </div>
-        <div className="purchase-btns">
-          <button>Add to cart</button>
+              </>
+              ) : null
+            }
+          </div>
+          {/* <div className="product-info">
+            <h2>{product.name}</h2>
+            <span>{product.price}</span>
+            <p>{product.description}</p>
+          </div> */}
+          <div className="purchase-btns">
+            <button>Add to cart</button>
+          </div>
         </div>
       </div>
     );

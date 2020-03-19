@@ -1,4 +1,13 @@
-.product-image {
+.product-show-container {
+  display: flex;
+  margin: 30px;
+  justify-content: space-evenly;
+}
+.product-show-info {
+  margin: 20px;
+}
+
+.product-show-image {
   width: 200px;
   height: 200px;
   border: 1px solid black;

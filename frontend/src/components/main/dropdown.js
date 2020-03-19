@@ -32,13 +32,18 @@ class Dropdown extends React.Component {
     }
   }
 
+
   render() {
 
     if (!this.props.categories){
       return null;
     }
 
-    const categories = this.props.categories.map((category, idx) => <Link key={idx} to={`/categories/${category.name}`}><li>{category.name}</li></Link>)
+    const categories = this.props.categories.map((category, idx) => 
+      <Link key={idx} to={`/categories/${category.name}`}>
+        <li>{category.name}</li>
+      </Link>
+    )
 
     return(
       <div className="dropdown" onClick={this.showDropdown}>
