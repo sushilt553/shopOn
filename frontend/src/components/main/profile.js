@@ -4,6 +4,10 @@ import "./profile.css";
 
 class Profile extends React.Component{
 
+    componentDidMount(){
+        this.props.fetchAllCategories();
+    }
+
     render (){
         return (
             <div className="profile-head">

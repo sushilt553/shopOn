@@ -19,6 +19,10 @@ class ProductCreateForm extends React.Component {
       .then(() => this.props.history.push('/products'));
   }
 
+  componentDidMount() {
+    this.props.fetchAllCategories();
+  }
+
   render() {
     return(
       <main className="product-create-main">

@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 class ProductEditForm extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.id)
+    this.props.fetchAllCategories();
   }
 
   render() {

@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import ProductsIndex from './products_index';
 import { fetchAllProducts, deleteProduct } from '../../actions/product_actions';
+import { fetchAllCategories } from '../../actions/category_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchAllProducts: () => dispatch(fetchAllProducts()),
-        deleteProduct: (productId) => dispatch(deleteProduct(productId))
+        deleteProduct: (productId) => dispatch(deleteProduct(productId)),
+        fetchAllCategories: () => dispatch(fetchAllCategories())
     }
 }
 
