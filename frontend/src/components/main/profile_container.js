@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import Profile from './profile';
 import { logout } from '../../actions/session_actions';
+import { fetchAllCategories } from '../../actions/category_actions';
 
 const mapStateToProps = state => {
     return {
@@ -10,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        fetchAllCategories: () => dispatch(fetchAllCategories())
     }
 }
 

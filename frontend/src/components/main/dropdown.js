@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Dropdown extends React.Component {
       return null;
     }
 
-    const categories = this.props.categories.map(category => <li key={category._id}>{category.name}</li>)
+    const categories = this.props.categories.map((category, idx) => <Link key={idx} to={`/categories/${category.name}`}><li>{category.name}</li></Link>)
 
     return(
       <div className="dropdown" onClick={this.showDropdown}>

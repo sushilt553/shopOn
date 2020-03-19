@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom';
 
 const ProductIndexItem = (props) => {
     return (
-      <Link to={`/products/${props.product._id}`}>
-        <li>
+      <li>
+        <Link to={`/products/${props.product._id}`}>
           Name: {props.product.name}
+        </Link>
           <br />
           Price: {props.product.price}
           <br />
@@ -19,7 +20,6 @@ const ProductIndexItem = (props) => {
           </button>
           <br />
         </li>
-      </Link>
     );
 }
 
