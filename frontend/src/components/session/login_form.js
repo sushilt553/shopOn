@@ -24,6 +24,9 @@ class LoginForm extends React.Component {
     this.setState({ errors: nextProps.errors });
   }
 
+  componentDidMount(){
+    this.props.fetchAllCategories();
+  }
 
   update(field) {
     return e =>

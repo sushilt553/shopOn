@@ -8,7 +8,7 @@ class CategoryProducts extends React.Component{
         const currentCategory = this.props.match.params.category;
         const prevCategory = prevProps.match.params.category;
 
-        if (currentCategory != prevCategory) {
+        if (currentCategory !== prevCategory) {
             this.props.fetchCategoryProducts(currentCategory)
         }
     }
