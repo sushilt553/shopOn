@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './product_show.css'
 
 class ProductShow extends React.Component {
 

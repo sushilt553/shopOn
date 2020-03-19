@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductIndexItem from './products_index_item';
+import './product__index.css';
 
 class ProductsIndex extends React.Component {
 
@@ -20,9 +21,13 @@ class ProductsIndex extends React.Component {
         />)
 
         return(
-            <div>
-                <h1>PRODUCTS</h1>
-                {products}
+            <div className="products-body">
+                <h1 className="products-body-header">
+                    PRODUCTS
+                </h1>
+                <div className="products-container">
+                    {products}
+                </div>
             </div>
         )
     }
