@@ -32,6 +32,13 @@ class Dropdown extends React.Component {
   }
 
   render() {
+
+    if (!this.props.categories){
+      return null;
+    }
+
+    const categories = this.props.categories.map(category => <li key={category._id}>{category.name}</li>)
+
     return(
       <div className="dropdown" onClick={this.showDropdown}>
         Categories
@@ -39,21 +46,7 @@ class Dropdown extends React.Component {
           this.state.show ? (
             <div ref={this.ref} className="dropdown-content">
                 <ul className="dropdown-list">
-                  <li>
-                    Books
-                  </li>
-                  <li>
-                    Clothes
-                  </li>
-                  <li>
-                    Jewelry
-                  </li>
-                  <li>
-                    Movies
-                  </li>
-                  <li>
-                    Shoes
-                  </li>
+                  {categories}
                 </ul>
             </div>
           ) : null

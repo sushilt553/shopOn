@@ -4,7 +4,8 @@ import {logout} from '../../actions/session_actions';
 
 const mapStateToProps = state => {
     return {
-        currentUser: state.session.isAuthenticated
+        currentUser: state.session.isAuthenticated,
+        categories: Object.values(state.entities.categories)
     }
 }
 

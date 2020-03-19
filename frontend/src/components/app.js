@@ -2,7 +2,7 @@ import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch } from "react-router-dom";
 
-import SplashPage from "./main/splash_page";
+import SplashPageContainer from "./main/splash_page_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import ProfileContainer from "./main/profile_container";
@@ -11,6 +11,7 @@ import NavbarContainer from './main/navbar_container';
 import ProductCreateContainer from "./products/product_create_container";
 import ProductShowPageContainer from "./products/product_show_container";
 import ProductEditContainer from "./products/product_edit_container";
+import CategoryProductsContainer from "./categories/category_products_container";
 
 const App = () => (
 
@@ -18,6 +19,7 @@ const App = () => (
     <NavbarContainer />
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path={`/categories/:category`} component={CategoryProductsContainer} />
       <ProtectedRoute exact path="/products/:id/edit" component={ProductEditContainer} />
       <ProtectedRoute exact path="/products/new" component={ProductCreateContainer} />
       <ProtectedRoute exact path={`/products/:id`} component={ProductShowPageContainer} />
@@ -25,7 +27,7 @@ const App = () => (
   
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <AuthRoute path="/" component={SplashPage} />
+      <AuthRoute path="/" component={SplashPageContainer} />
     </Switch>
   </div>
 );
