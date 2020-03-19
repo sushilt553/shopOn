@@ -16,34 +16,34 @@ module.exports = [
     price: 14.99,
     description: "Champion LIFE Men's Cotton Long Sleeve Tee",
     category: "Clothing",
-    image_urls: []
+    image_urls: ["https://shoponbucket.s3.amazonaws.com/clothes/long_sleeve_tee_1.jpg", "https://shoponbucket.s3.amazonaws.com/clothes/long_sleeve_tee_2.jpg", "https://shoponbucket.s3.amazonaws.com/clothes/long_sleeve_tee_3.jpg", "https://shoponbucket.s3.amazonaws.com/clothes/long_sleeve_tee_4.jpg", "https://shoponbucket.s3.amazonaws.com/clothes/long_sleeve_tee_5.jpg"]
   },
   {
     name: "Heart Pendant Necklace",
     price: 33.99,
     description: "Infinity Love Heart Pendant Necklace with Crystals",
-    category: "3",
+    category: "Jewelry",
     image_urls: []
   },
   {
     name: "Under Armour Running Shoes",
     price: 64.99,
     description: "Under Armour Men's Charged Assert 8 Running Shoes",
-    category: "4",
+    category: "Shoes",
     image_urls: []
   },
   {
     name: "Paint",
     price: 5.68,
     description: "Crayola Washable Paint",
-    category: "5",
+    category: "Toys",
     image_urls: []
   },
   {
     name: "American Dirt",
     price: 16.79,
     description: "By Jeanine Cummins.  It's a story about a bookstore owner in Mexico.",
-    category: "1",
+    category: "Books",
     image_urls: []
   },
 ]
