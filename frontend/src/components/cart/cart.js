@@ -24,15 +24,9 @@ class Cart extends React.Component{
     }
 
     render(){
-<<<<<<< HEAD
-        // debugger;
-        const products = this.props.products.map((product, idx) => 
-        <li key={idx}>
-=======
 
         const products = this.props.products.map((product, idx) => (
           <li key={idx}>
->>>>>>> rewards
             {product.name}
             <br />${product.price}
             <br />
