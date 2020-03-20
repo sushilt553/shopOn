@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const User = require('../../models/User');
+const Product = require('../../models/Product');
 const passport = require("passport");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
@@ -43,6 +44,17 @@ router.patch(
       .catch(err => res.json(err))
     }
   } 
+)
+
+router.delete(
+  "/",
+  async(req, res) => {
+    const user = await User.findOne({_id: req.body.userId});
+    // debugger;
+    await user.cartProducts.remove(req.body.productId);
+    user.save()
+      .then((user) => res.json(user));
+  }
 )
 
 router.post("/signup", (req, res) => {

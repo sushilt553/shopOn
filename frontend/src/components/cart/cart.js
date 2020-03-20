@@ -4,10 +4,17 @@ class Cart extends React.Component{
     constructor(props){
         super(props);
         this.addToOrder = this.addToOrder.bind(this);
+        // this.removeFromCart = this.removeFromCart.bind(this);
     }
     // componentDidMount(){
     //     this.props.fetchAllProducts()
     //     this.props.fetchAllCategories()
+    // }
+
+    // removeFromCart(id){
+    //     return () =>
+    //     this.props.removeFromCart({userId: this.props.user._id, productId: id})
+    //     .then(() => this.props.history.push("/products"))
     // }
 
     addToOrder(e) {
@@ -17,17 +24,32 @@ class Cart extends React.Component{
     }
 
     render(){
+<<<<<<< HEAD
         // debugger;
         const products = this.props.products.map((product, idx) => 
         <li key={idx}>
+=======
+
+        const products = this.props.products.map((product, idx) => (
+          <li key={idx}>
+>>>>>>> rewards
             {product.name}
-            <br/>
-            ${product.price}
-            <br/>
+            <br />${product.price}
+            <br />
             {product.description}
-            <br/>
-            <br/>
-        </li>)
+            <br />
+            <br />
+            <button
+              onClick={() =>
+                this.props
+                  .removeFromCart({userId: this.props.user._id, productId: product._id})
+                  .then(() => this.props.history.push("/products"))
+              }
+            >
+              Remove from cart
+            </button>
+          </li>
+        ));
 
         let totalAmount = 0;
 
