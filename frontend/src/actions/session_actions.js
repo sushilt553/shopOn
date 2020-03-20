@@ -61,3 +61,7 @@ export const addToOrder = order => dispatch => {
   .then(res => dispatch(receiveCurrentUser(res.data)))
 }
 
+export const removeFromCart = productData => dispatch => {
+  return APIUtil.removeProduct(productData)
+  .then((res) => dispatch(receiveCurrentUser(res.data)))
+}
