@@ -9,9 +9,11 @@ import { logout } from './actions/session_actions';
 //test
 import * as category from './actions/category_actions';
 import * as Product from './actions/product_actions';
+import {searchProducts} from './actions/search_actions';
 
 window.createProduct = Product.createProduct;
 window.category = category.fetchCategoryProducts;
+window.search = searchProducts;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
