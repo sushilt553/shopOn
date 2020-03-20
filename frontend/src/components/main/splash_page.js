@@ -5,6 +5,7 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCategories();
+    this.props.fetchAllProducts();
   }
   
   render() {

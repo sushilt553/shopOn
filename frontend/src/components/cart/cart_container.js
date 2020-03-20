@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import Cart from './cart';
+import { addToOrder } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
 
@@ -7,7 +8,14 @@ const mapStateToProps = state => {
     // debugger;
     return {
         products: products,
+        user: state.session.user
     }
 }
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = dispatch => {
+    return {
+        addToOrder: (order) => dispatch(addToOrder(order))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
