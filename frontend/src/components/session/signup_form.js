@@ -86,7 +86,9 @@ class SignupForm extends React.Component {
               <input className="signup-form-submit"
                 type = "submit"
                 value = "CREATE MY ACCOUNT" />
-
+              <button className="demo-btn" onClick={this.props.demoLogin}>
+                Demo Login
+              </button>
               <span className="signup-lower-message">Already have an account? <Link className="signup-login-link" to={"/login"}>Login</Link></span>
               <div className="signup-errors">
                 { this.renderErrors() } 

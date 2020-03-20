@@ -69,6 +69,26 @@
     background-color: #0b2fa8;
 }
 
+.demo-btn {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #6f8ff6;
+    background-color: #6f8ff6;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.65;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    box-sizing: border-box;
+}
+
+.demo-btn:hover {
+    background-color: #0b2fa8;
+}
+
 .login-form-lower-message {
     padding: 12px 14px;
     text-align: center;
