@@ -12,7 +12,7 @@ class Cart extends React.Component{
         // if (!this.props.products){
         //     return null;
         // }
-        debugger;
+        // debugger;
         const products = this.props.products.map((product, idx) => 
         <li key={idx}>
             {product.name}
@@ -24,9 +24,19 @@ class Cart extends React.Component{
             <br/>
         </li>)
 
+        let totalAmount = 0;
+        for (let i = 0; i < this.props.products.length; i++){
+            totalAmount = totalAmount + this.props.products[i].price
+        }
+
+        // debugger;
+
         return (
             <ul>
                 {products}
+                Total amount: $ {totalAmount}
+                <br/>
+                <button>Place Order</button>
             </ul>
         )
     }

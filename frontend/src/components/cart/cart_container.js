@@ -4,7 +4,7 @@ import Cart from './cart';
 const mapStateToProps = state => {
 
     const products = state.session.user.cartProducts.map((product) => state.entities.products[product]);
-    debugger;
+    // debugger;
     return {
         products: products,
     }
