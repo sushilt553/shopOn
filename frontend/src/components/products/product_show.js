@@ -16,12 +16,14 @@ class ProductShow extends React.Component {
     this.props.fetchAllCategories();
   }
 
-  //re render once product is updated
-  // componentDidUpdate(oldProps){
-  //   if ( this.props.product !== oldProps.product && this.props.track ) {
+  componentDidUpdate(prevProps) {
+    const currentProduct = this.props.match.params.id;
+    const prevProduct = prevProps.match.params.id;
 
-  //   }
-  // }
+    if (currentProduct !== prevProduct) {
+      this.props.fetchProduct(currentProduct);
+    }
+  }
 
   deleteProduct(e) {
     e.preventDefault();
@@ -36,8 +38,10 @@ class ProductShow extends React.Component {
     }
     return (
       <div className="product-show-container">
-        <div className="product-show-image">
-          <img></img>
+        <div className="product-image">
+          {product.image_urls.map((url, i) => (
+            <img className="product-show-pix-indiv" key={i} src={url} />
+          ))}
         </div>
         <div className="product-show-info">
           <div className="product-show-details">

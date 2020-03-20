@@ -21,7 +21,7 @@ class Navbar extends React.Component {
                 <section className="nav-comp-2">
                     {navComponent}
                     <Link className="search" to={"/"}>SEARCH</Link>
-                    <Link className="cart" to={"/"}>CART</Link>
+                    <Link className="cart" to={"/cart"}>CART</Link>
                 </section>
             </div>
         )
