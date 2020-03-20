@@ -22,10 +22,23 @@ const UserSchema = new Schema({
     default: false
   },
 
-  products: {
-    type: [Schema.Types.ObjectId],
-    ref: "Product"
+  cartProducts: {
+    type: Array
   },
+
+  orderProducts: {
+    type: Array
+  },
+
+  // cartProducts: {
+  //   type: [Schema.Types.ObjectId],
+  //   ref: "Product"
+  // },
+
+  // orderProducts: {
+  //   type: [Schema.Types.ObjectId],
+  //   ref: "Product"
+  // },
   
   date: {
     type: Date,

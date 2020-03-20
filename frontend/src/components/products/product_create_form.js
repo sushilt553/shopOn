@@ -17,7 +17,7 @@ class ProductCreateForm extends React.Component {
     
     e.preventDefault();
     
-    if (this.props.formType == 'Update Your Product'){
+    if (this.props.formType === 'Update Your Product'){
       const product = {
         _id: this.state._id,
         name: this.state.name,
