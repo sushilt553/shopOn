@@ -40,37 +40,31 @@ class ProductShow extends React.Component {
           <img></img>
         </div>
         <div className="product-show-info">
-          <div className="product-show-description">
-            <h2>{product.name}</h2>
-            <span>{product.price}</span>
-            <p>{product.description}</p>
+          <div className="product-show-details">
+            <h2 className="product-show-name">{product.name}</h2>
+            <span className="product-show-price">${product.price}</span>
+            <p className="product-show-description">{product.description}</p>
           </div>
-          <div className="product-show-edit-btns">
+          <div className="product-show-action-btns">
             {
               this.props.isAdmin ? (
               <>
-                <Link to={`/products/${product._id}/edit`}>
-                  <button className="product-show-edit-btn">
-                    Edit Product
-                  </button>
+                <Link 
+                  to={`/products/${product._id}/edit`}
+                  className="product-show-edit-btn"
+                >
+                  Edit
                 </Link>
                 <button 
                   className="product-show-delete-btn" 
                   onClick={this.deleteProduct}>
-                  Delete Product
+                  Delete
                 </button>
               </>
               ) : null
             }
           </div>
-          {/* <div className="product-info">
-            <h2>{product.name}</h2>
-            <span>{product.price}</span>
-            <p>{product.description}</p>
-          </div> */}
-          <div className="purchase-btns">
-            <button>Add to cart</button>
-          </div>
+            <button className="product-cart-btn">Add to cart</button>
         </div>
       </div>
     );
