@@ -13,7 +13,7 @@ router.get(
         ).join(" ");
 
         // const foundProduct = await req.params.name[0].toUpperCase() + req.params.name.slice(1).toLowerCase()
-        Product.find({name: product})
+      Product.find({ $text: { $search: req.params.name } })
         .then(products => res.json(products))
         .catch(err => res.json(err))
     }
