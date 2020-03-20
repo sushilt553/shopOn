@@ -23,3 +23,7 @@ export const updateCart = cart => {
 export const updateOrder = order => {
   return axios.patch(`/api/users/${order.userId}`, order.orderProducts);
 }
+
+export const removeProduct = productData => {
+  return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}});
+}
