@@ -37,7 +37,9 @@ class ProductShow extends React.Component {
     return (
       <div className="product-show-container">
         <div className="product-image">
-          <img></img>
+          {product.image_urls.map((url, i) => (
+            <img className="product-show-pix-indiv" key={i} src={url} />
+          ))}
         </div>
         <div className="edit-product-btns">
           {
@@ -57,11 +59,6 @@ class ProductShow extends React.Component {
         </div>
         <div className="product-info">
           <h2>{product.name}</h2>
-          <div className="product-show-pix">
-            {product.image_urls.map((url, i) => (
-              <img className="product-show-pix-indiv" key={i} src={url} />
-            ))}
-          </div>
           <span>{product.price}</span>
           <p>{product.description}</p>
         </div>
