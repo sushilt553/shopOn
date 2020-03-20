@@ -30,6 +30,8 @@ class CategoryProducts extends React.Component{
                     key={product._id} 
                     isAdmin={this.props.isAdmin} 
                     product={product}
+                    user={this.props.user}
+                    addToCart={this.props.addToCart}
                 />
             )
 

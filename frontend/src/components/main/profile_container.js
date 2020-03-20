@@ -10,7 +10,6 @@ const mapStateToProps = state => {
         orders = state.session.user.orderProducts.map(order => state.entities.products[order]);
     }
     
-    debugger;
     return {
         user: state.session.user.username,
         isAdmin: state.session.user.isAdmin,

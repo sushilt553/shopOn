@@ -9,6 +9,7 @@ class ProductShow extends React.Component {
     //state
     // this.editProduct = this.editProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount(){
@@ -23,6 +24,13 @@ class ProductShow extends React.Component {
     if (currentProduct !== prevProduct) {
       this.props.fetchProduct(currentProduct);
     }
+  }
+
+  addToCart(e) {
+    e.preventDefault();
+    // debugger;
+    this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
+      .then(() => this.props.history.push("/products"))
   }
 
   deleteProduct(e) {
@@ -68,7 +76,7 @@ class ProductShow extends React.Component {
               ) : null
             }
           </div>
-            <button className="product-cart-btn">Add to cart</button>
+            <button className="product-cart-btn" onClick={this.addToCart}>Add to cart</button>
         </div>
       </div>
     );

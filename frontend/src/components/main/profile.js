@@ -14,7 +14,7 @@ class Profile extends React.Component{
             <Link to="/products/new"><button>Create a new Product</button></Link>
         :
         null;
-        debugger;
+        // debugger;
 
         // let products = this.props.products.filter(function(product) {
         //     if (product === undefined){
