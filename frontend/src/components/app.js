@@ -13,6 +13,7 @@ import ProductShowPageContainer from "./products/product_show_container";
 import ProductEditContainer from "./products/product_edit_container";
 import CategoryProductsContainer from "./categories/category_products_container";
 import CartContainer from "./cart/cart_container"
+import SearchContainer from './search/search_container';
 
 const App = () => (
 
@@ -20,6 +21,7 @@ const App = () => (
     <NavbarContainer />
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/search/:name" component={SearchContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
       <ProtectedRoute exact path={`/categories/:category`} component={CategoryProductsContainer} />
       <ProtectedRoute exact path="/products/:id/edit" component={ProductEditContainer} />
