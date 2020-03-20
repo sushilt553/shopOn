@@ -25,7 +25,7 @@ router.get(
     "/",
     // passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        Product.find().limit(10)
+        Product.find().limit(20)
             .then(products => res.json(products))
             .catch(err => res.status(400).json(err))
     }
