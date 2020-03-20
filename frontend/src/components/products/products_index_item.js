@@ -22,7 +22,7 @@ const ProductIndexItem = (props) => {
         <div className="product-info-container">
           <Link to={`/products/${props.product._id}`}>
             <div className="product-img">
-              <img></img>
+            <img src={props.product.image_urls[0]} ></img>
             </div>
             <li className="product-info">
               <div className="product-description">
