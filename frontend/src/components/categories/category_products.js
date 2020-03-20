@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductIndexItem from '../products/products_index_item';
-
+import './category_index.css';
 class CategoryProducts extends React.Component{
 
 
@@ -36,7 +36,7 @@ class CategoryProducts extends React.Component{
             )
 
         return (
-            <ul>
+            <ul className="category-index-item">
                 {products}        
             </ul>
         )
