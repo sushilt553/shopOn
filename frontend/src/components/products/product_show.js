@@ -46,7 +46,7 @@ class ProductShow extends React.Component {
     }
     return (
       <div className="product-show-container">
-        <div className="product-image">
+        <div className="product-show-image">
           {product.image_urls.map((url, i) => (
             <img className="product-show-pix-indiv" key={i} src={url} />
           ))}

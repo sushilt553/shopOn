@@ -17,6 +17,11 @@
   border: 1px solid black;
 }
 
+.product-show-pix-indiv {
+  width: 100%;
+  height: 100%;
+}
+
 .product-show-details {
   text-align: center;
   padding: 20px;
