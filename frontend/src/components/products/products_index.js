@@ -20,6 +20,8 @@ class ProductsIndex extends React.Component {
         product={product}
         isAdmin={this.props.isAdmin}
         deleteProduct={this.props.deleteProduct}
+        addToCart={this.props.addToCart}
+        user={this.props.user}
         />)
         
         return(

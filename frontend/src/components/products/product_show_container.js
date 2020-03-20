@@ -12,6 +12,6 @@ const mapDispatchToProps = dispatch => ({
   fetchProduct: (productId) => dispatch(fetchProduct(productId)),
   updateProduct: updatedProduct => dispatch(updateProduct(updatedProduct)),
   deleteProduct: productId => dispatch(deleteProduct(productId)),
-  fetchAllCategories: () => dispatch(fetchAllCategories)
+  fetchAllCategories: () => dispatch(fetchAllCategories())
 })
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);

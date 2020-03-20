@@ -50,3 +50,14 @@ export const logout = () => dispatch => {
   APIUtil.setAuthToken(false)
   return dispatch(logoutUser());
 };
+
+export const addToCart = cart => dispatch => {
+  return APIUtil.updateCart(cart)
+  .then(res => dispatch(receiveCurrentUser(res.data)))
+}
+
+export const addToOrder = order => dispatch => {
+  return APIUtil.updateOrder(order)
+  .then(res => dispatch(receiveCurrentUser(res.data)))
+}
+

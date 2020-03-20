@@ -10,7 +10,6 @@ import { logout } from './actions/session_actions';
 import * as category from './actions/category_actions';
 import * as Product from './actions/product_actions';
 
-
 window.createProduct = Product.createProduct;
 window.category = category.fetchCategoryProducts;
 

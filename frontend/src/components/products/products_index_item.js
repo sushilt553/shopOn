@@ -1,16 +1,28 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import './product__index.css';
 
-const ProductIndexItem = (props) => {
+class ProductIndexItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.addToCart = this.addToCart.bind(this);
+  }
 
-    const editDelete = props.isAdmin ? 
+  addToCart(e){
+    e.preventDefault();
+    // debugger;
+    this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
+    .then(() => this.props.history.push("/products"))
+  }
+
+  render(){
+    const editDelete = this.props.isAdmin ? 
       <div className="product-action-btns">
-        <Link to={`/products/${props.product._id}/edit`}
+        <Link to={`/products/${this.props.product._id}/edit`}
           className="edit-btn"
         >Edit
         </Link>
-        <button onClick={() => props.deleteProduct(props.product._id)}
+        <button onClick={() => this.props.deleteProduct(this.props.product._id)}
           className="delete-btn"
         >Delete
         </button>
@@ -20,15 +32,15 @@ const ProductIndexItem = (props) => {
 
     return (
         <div className="product-info-container">
-          <Link to={`/products/${props.product._id}`}>
+          <Link to={`/products/${this.props.product._id}`}>
             <div className="product-img">
             <img src={props.product.image_urls[0]} ></img>
             </div>
             <li className="product-info">
               <div className="product-description">
-                {props.product.name}
+                {this.props.product.name}
                 <br />
-                ${props.product.price}
+                ${this.props.product.price}
                 <br />
                 {/* Category: {props.product.category}
                 <br /> */}
@@ -36,9 +48,10 @@ const ProductIndexItem = (props) => {
             </li>
           </Link>
             {editDelete}
-            <button className="cart-btn">Add to Cart</button>
+            <button className="cart-btn" onClick={this.addToCart}>Add to Cart</button>
         </div>
-    );
+      );
+    }
 }
 
-export default ProductIndexItem;
+export default withRouter(ProductIndexItem);
