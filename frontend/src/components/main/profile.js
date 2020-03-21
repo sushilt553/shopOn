@@ -17,7 +17,7 @@ class Profile extends React.Component{
 
     render (){
         const createProduct = this.props.isAdmin ?
-            <Link to="/products/new"><button>Create a new Product</button></Link>
+            <Link to="/products/new" className="create-a-product"><button>Create a new Product</button></Link>
         :
         null;
         // debugger;
@@ -38,12 +38,12 @@ class Profile extends React.Component{
 
         return (
             <div className="profile-head">
-                {createProduct}
                 <button className="profile-logout" onClick={this.props.logout}>LOGOUT</button>
                 <section className="acc-user">
                     <h1 className="my-account">MY ACCOUNT</h1>
                     <p className="user-username">Welcome back, {this.props.user}!</p>
                 </section>
+                {createProduct}
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
                 <p className="my-orders">YOUR RECENT ORDERS</p>
                 <ul>
