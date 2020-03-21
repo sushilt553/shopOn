@@ -6,7 +6,10 @@ import { fetchAllCategories } from '../../actions/category_actions';
 const mSP = (state, ownProps) => {
   const id = ownProps.match.params.id
   let product = state.entities.products[id]
-  let category = state.entities.categories[product.category]
+  let category;
+  if (product){
+    category = state.entities.categories[product.category]
+  }
 
   if (category){
     product.category = category.name;

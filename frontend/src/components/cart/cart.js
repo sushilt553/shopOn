@@ -17,9 +17,9 @@ class Cart extends React.Component{
     //     .then(() => this.props.history.push("/products"))
     // }
 
-    addToOrder(e) {
-        e.preventDefault();
-        this.props.addToOrder({userId: this.props.user._id, orderProducts: {order: this.props.user.cartProducts}})
+    addToOrder(totalAmount) {
+      return () =>
+        this.props.addToOrder({userId: this.props.user._id, orderProducts: this.props.user.cartProducts, rewards: totalAmount })
         .then(() => this.props.history.push("/profile"))
     }
 
@@ -31,7 +31,7 @@ class Cart extends React.Component{
     }
 
     render(){
-        debugger;
+        // debugger;
 
         if (this.props.products.length === 0){
           return null;
@@ -68,7 +68,7 @@ class Cart extends React.Component{
                 {products}
                 Total amount: $ {totalAmount}
                 <br />
-                <button onClick={this.addToOrder}>Place Order</button>
+                <button onClick={this.addToOrder(totalAmount)}>Place Order</button>
             </ul>
         )
     }

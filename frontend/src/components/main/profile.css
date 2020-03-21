@@ -21,6 +21,18 @@
     color: whitesmoke;
 }
 
+.create-a-product {
+    align-self: center;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    background-color: #6f8ff6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+
 .my-orders {
     letter-spacing: 0.1em;
     margin-top: 50px;
@@ -45,7 +57,7 @@
     color: #7e6c5d;
 }
 
-.profile-logout{
+.profile-logout {
     width: 80px;
 }
 
