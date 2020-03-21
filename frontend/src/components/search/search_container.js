@@ -12,6 +12,7 @@ const mSP = (state, ownProps) => {
   return {
     products,
     user: state.session.user,
+    isAdmin: state.session.user.isAdmin,
     name
   };
 };
