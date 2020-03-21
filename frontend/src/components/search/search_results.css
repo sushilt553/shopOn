@@ -1,0 +1,6 @@
+.product-search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
