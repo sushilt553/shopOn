@@ -49,7 +49,7 @@ class Cart extends React.Component{
               onClick={() =>
                 this.props
                   .removeFromCart({userId: this.props.user._id, productId: product._id})
-                  .then(() => this.props.history.push("/products"))
+                  // .then(() => this.props.history.push("/products"))
               }
             >
               Remove from cart
