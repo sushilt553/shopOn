@@ -12,7 +12,7 @@ class ProductIndexItem extends React.Component {
     e.preventDefault();
     // debugger;
     this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
-    .then(() => this.props.history.push("/products"))
+    // .then(() => this.props.history.push("/products"))
   }
 
   render(){
