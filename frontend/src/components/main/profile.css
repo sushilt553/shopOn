@@ -91,3 +91,10 @@
     margin-right: 30px;
     background: transparent;
 }
+
+.reward{
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+    align-self: center;
+}

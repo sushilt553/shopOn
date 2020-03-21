@@ -21,12 +21,17 @@ class Profile extends React.Component{
         :
         null;
         // debugger;
-
+        
         if (this.props.products.length === 0){
             return null;
         }
 
-        const products = this.props.orders.map((product, idx) => 
+        let products;
+
+        if (this.props.orders.length === 0) {
+            products = <div>NO RECENT ORDERS</div>
+        }else{
+            products = this.props.orders.map((product, idx) => 
             <li key={idx}>
                 <span className="order-tag-icon">
                     <i className="fas fa-tag"></i>
@@ -40,6 +45,7 @@ class Profile extends React.Component{
                 </span>
                 </li>
             )
+        }
 
         return (
             <div className="profile-head">
@@ -47,10 +53,10 @@ class Profile extends React.Component{
                 <section className="acc-user">
                     <h1 className="my-account">MY ACCOUNT</h1>
                     <p className="user-username">Welcome back, {this.props.user}!</p>
-                    <h1>REWARD POINTS: {this.props.rewards}</h1>
                 </section>
                 {createProduct}
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
+                <h1 className="reward">REWARD POINTS: {this.props.rewards.toFixed(2)}</h1>
                 <p className="my-orders"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
                 <ul className="orders-list">
                     {products}

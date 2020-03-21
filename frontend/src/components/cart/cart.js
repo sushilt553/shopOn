@@ -62,6 +62,7 @@ class Cart extends React.Component{
         for (let i = 0; i < this.props.cart.length; i++){
             totalAmount = totalAmount + this.props.cart[i].price
         }
+        totalAmount = totalAmount.toFixed(2);
 
         return (
             <ul>
