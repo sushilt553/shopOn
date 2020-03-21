@@ -22,10 +22,11 @@ class ProductCreateForm extends React.Component {
         _id: this.state._id,
         name: this.state.name,
         price: this.state.price.toString(),
+        image_urls: this.state.image_urls,
         category: this.state.category,
         description: this.state.description
       }
-      debugger;
+      // debugger;
       this.props.processForm(product)
       .then(() => this.props.history.push('/products'));
     }else{
@@ -74,6 +75,16 @@ class ProductCreateForm extends React.Component {
                />
             </label>
           <br/>
+            <label>Upload pictures: 
+              <input 
+                onChange={this.update('image_urls')}
+                value={this.state.image_urls}
+                type='text'
+                placeholder='Add image url'
+                required
+              />
+            </label>
+            <br/>
             <label>Description:
               <br/>
             <textarea 
