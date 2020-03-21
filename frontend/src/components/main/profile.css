@@ -65,8 +65,11 @@
 .orders-list li {
     display: flex;
     margin-bottom: 20px;
+    /* color: #7e6c5d; */
+    /* font-weight: bold; */
 }
 
 .order-tag-icon {
     margin-right: 10px;
+    color: #7e6c5d;
 }
