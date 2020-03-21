@@ -63,6 +63,9 @@ class SignupForm extends React.Component {
         <form className="signup-form-body" onSubmit={this.handleSubmit}>
           <h1>ACCOUNT SIGN UP</h1>
           <p>Please fill in the information below:</p>
+          <div className="signup-errors">
+            {this.renderErrors()}
+          </div>
           <div className="signup-form">
             <br/>
               <input className="signup-info" type = "text"
@@ -90,9 +93,6 @@ class SignupForm extends React.Component {
                 Demo Login
               </button>
               <span className="signup-lower-message">Already have an account? <Link className="signup-login-link" to={"/login"}>Login</Link></span>
-              <div className="signup-errors">
-                { this.renderErrors() } 
-              </div>
           </div>  
         </form > 
       </div>
