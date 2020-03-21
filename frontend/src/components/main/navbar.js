@@ -54,7 +54,7 @@ class Navbar extends React.Component {
           />
           {navComponent}
           <Link className="cart" to={"/cart"}>
-            CART
+           ({this.props.numItems}) CART
           </Link>
         </section>
       </div>
