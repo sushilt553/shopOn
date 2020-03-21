@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './cart.css';
 class Cart extends React.Component{
     constructor(props){
         super(props);
@@ -31,7 +31,7 @@ class Cart extends React.Component{
     }
 
     render(){
-        debugger;
+        // debugger;
 
         if (this.props.products.length === 0){
           return null;
@@ -39,21 +39,40 @@ class Cart extends React.Component{
 
         const products = this.props.cart.map((product, idx) => (
           <li key={idx}>
-            {product.name}
-            <br />${product.price}
-            <br />
-            {product.description}
-            <br />
-            <br />
-            <button
-              onClick={() =>
-                this.props
-                  .removeFromCart({userId: this.props.user._id, productId: product._id})
-                  // .then(() => this.props.history.push("/products"))
-              }
-            >
-              Remove from cart
-            </button>
+            <div className="cart-image-container">
+              <img 
+                src={product.image_urls[0]}
+                className="cart-image"></img>
+            </div>
+              <div className="item-info-action">
+                <div className="item-info-description">
+                  <p>
+                    {product.name}
+                  </p> 
+                  <br />
+                  <p>
+                    ${product.price}
+                  </p>
+                  <br />
+                  <p>
+                    {product.description}
+                  </p>
+                  <br />
+                  <br />
+                </div>
+                <div className="cart-remove-btn-container">
+                  <button
+                    onClick={() =>
+                      this.props
+                      .removeFromCart({userId: this.props.user._id, productId: product._id})
+                      // .then(() => this.props.history.push("/products"))
+                    }
+                    className="cart-remove-btn"
+                    >
+                    Remove from cart
+                  </button>
+                </div>
+              </div>
           </li>
         ));
 
@@ -64,12 +83,19 @@ class Cart extends React.Component{
         }
 
         return (
-            <ul>
-                {products}
-                Total amount: $ {totalAmount}
-                <br />
-                <button onClick={this.addToOrder}>Place Order</button>
-            </ul>
+          <div className="items-container">
+            <h1>Your items</h1>
+            <div className="items">
+              <ul className="list-items">
+                  {products}
+                  Total amount: $ {totalAmount}
+                  <br />
+                  <button onClick={this.addToOrder}
+                    className="cart-purchase-btn"
+                  >Place Order</button>
+              </ul>
+            </div>
+          </div>
         )
     }
 }

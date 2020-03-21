@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import ProductIndexItem from '../products/products_index_item';
-import './search_results.css';
+
 class Search extends React.Component {
 
   componentDidUpdate(prevProps) {
