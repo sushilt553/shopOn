@@ -58,7 +58,6 @@ class Cart extends React.Component{
                     {product.description}
                   </p>
                   <br />
-                  <br />
                 </div>
                 <div className="cart-remove-btn-container">
                   <button
