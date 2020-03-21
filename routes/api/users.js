@@ -27,7 +27,7 @@ router.get(
 router.patch(
   "/:id",
   async(req, res) => {
-    debugger;
+    // debugger;
     const user = await User.findOne({_id: req.params.id});
 
     if (req.body.cart){
@@ -39,7 +39,7 @@ router.patch(
     }else{
       user.cartProducts = [];
       user.orderProducts = req.body.order;
-      // user.rewards = user.rewards + req.body.rewards;
+      user.rewards = user.rewards + req.body.rewards;
       // debugger;
       user.save()
       .then(user => res.json(user))
@@ -51,6 +51,7 @@ router.patch(
 router.delete(
   "/",
   async(req, res) => {
+    debugger;
     const user = await User.findOne({_id: req.body.userId});
     // debugger;
     await user.cartProducts.remove(req.body.productId);

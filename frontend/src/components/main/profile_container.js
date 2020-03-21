@@ -13,6 +13,7 @@ const mapStateToProps = state => {
     
     return {
         user: state.session.user.username,
+        rewards: state.session.user.rewards,
         isAdmin: state.session.user.isAdmin,
         orders: orders,
         products: Object.values(state.entities.products)

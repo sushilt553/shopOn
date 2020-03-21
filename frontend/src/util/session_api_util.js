@@ -21,7 +21,7 @@ export const updateCart = cart => {
 }
 
 export const updateOrder = order => {
-  return axios.patch(`/api/users/${order.userId}`, {data: {order: order.orderProducts, rewards: order.rewards}});
+  return axios.patch(`/api/users/${order.userId}`, {order: order.orderProducts, rewards: order.rewards});
 }
 
 export const removeProduct = productData => {

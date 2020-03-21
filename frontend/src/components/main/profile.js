@@ -42,6 +42,7 @@ class Profile extends React.Component{
                 <section className="acc-user">
                     <h1 className="my-account">MY ACCOUNT</h1>
                     <p className="user-username">Welcome back, {this.props.user}!</p>
+                    <h1>REWARD POINTS: {this.props.rewards}</h1>
                 </section>
                 {createProduct}
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
