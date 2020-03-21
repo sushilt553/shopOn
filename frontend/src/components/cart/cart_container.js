@@ -6,16 +6,17 @@ import { fetchAllProducts } from '../../actions/product_actions';
 
 const mapStateToProps = state => {
 
-    let products = [];
+    let cart = [];
     // debugger;
-    if (Object.values(state.entities.products).length !== 0) {
-        products = state.session.user.cartProducts.map(product => state.entities.products[product]);
+    if (Object.values(state.entities.products).length > 0) {
+        cart = state.session.user.cartProducts.map(product => state.entities.products[product]);
     }
     // const products = state.session.user.cartProducts.map((product) => state.entities.products[product]);
-    // debugger;
+    debugger;
     return {
-        products: products,
-        user: state.session.user
+        cart: cart,
+        user: state.session.user,
+        products: Object.values(state.entities.products)
     }
 }
 

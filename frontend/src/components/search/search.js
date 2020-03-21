@@ -8,7 +8,7 @@ class Search extends React.Component {
     const currentName = this.props.name;
     const prevName = prevProps.name;
 
-    if (currentName != prevName) {
+    if (currentName !== prevName) {
       this.props.searchProducts(currentName);
     }
   }

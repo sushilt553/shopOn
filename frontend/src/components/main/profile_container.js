@@ -7,14 +7,15 @@ import { fetchAllProducts} from '../../actions/product_actions';
 const mapStateToProps = state => {
     let orders = [];
     // debugger;
-    if (Object.values(state.entities.products).length !== 0) {
+    if (Object.values(state.entities.products).length > 0) {
         orders = state.session.user.orderProducts.map(order => state.entities.products[order]);
     }
     
     return {
         user: state.session.user.username,
         isAdmin: state.session.user.isAdmin,
-        orders: orders
+        orders: orders,
+        products: Object.values(state.entities.products)
     }
 }
 

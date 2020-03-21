@@ -22,19 +22,19 @@ class Profile extends React.Component{
         null;
         // debugger;
 
-        if (this.props.orders.length === 0){
+        if (this.props.products.length === 0){
             return null;
         }
 
         const products = this.props.orders.map((product, idx) => 
-        <li key={idx}>
-            {product.name}
-            <br />
-            {product.price}
-            <br />
-            {product.description}
-            </li>
-        )
+            <li key={idx}>
+                {product.name}
+                <br />
+                {product.price}
+                <br />
+                {product.description}
+                </li>
+            )
 
         return (
             <div className="profile-head">

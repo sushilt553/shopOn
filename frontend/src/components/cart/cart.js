@@ -26,13 +26,18 @@ class Cart extends React.Component{
 
     componentDidMount() {
       this.props.fetchAllCategories();
-      this.props.fetchAllProducts()
+      this.props.fetchAllProducts();
       // .then(() => this.props.history.push("/products"))
     }
 
     render(){
         debugger;
-        const products = this.props.products.map((product, idx) => (
+
+        if (this.props.products.length === 0){
+          return null;
+        }
+
+        const products = this.props.cart.map((product, idx) => (
           <li key={idx}>
             {product.name}
             <br />${product.price}
@@ -54,8 +59,8 @@ class Cart extends React.Component{
 
         let totalAmount = 0;
 
-        for (let i = 0; i < this.props.products.length; i++){
-            totalAmount = totalAmount + this.props.products[i].price
+        for (let i = 0; i < this.props.cart.length; i++){
+            totalAmount = totalAmount + this.props.cart[i].price
         }
 
         return (
