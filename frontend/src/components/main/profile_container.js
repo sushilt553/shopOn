@@ -5,8 +5,9 @@ import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts} from '../../actions/product_actions';
 
 const mapStateToProps = state => {
-    let orders;
-    if (state.entities.products) {
+    let orders = [];
+    // debugger;
+    if (Object.values(state.entities.products).length !== 0) {
         orders = state.session.user.orderProducts.map(order => state.entities.products[order]);
     }
     

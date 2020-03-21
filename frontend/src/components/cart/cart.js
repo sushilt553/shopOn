@@ -23,6 +23,13 @@ class Cart extends React.Component{
         .then(() => this.props.history.push("/profile"))
     }
 
+
+    componentDidMount() {
+      this.props.fetchAllCategories();
+      this.props.fetchAllProducts()
+      // .then(() => this.props.history.push("/products"))
+    }
+
     render(){
         debugger;
         const products = this.props.products.map((product, idx) => (

@@ -1,13 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import "./profile.css";
+import {withRouter} from 'react-router-dom';
 
 class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchAllCategories();
-        this.props.fetchAllProducts();
+        this.props.fetchAllProducts()
+        // .then(() => this.props.history.push("/products"))
     }
+
+    // componentWillUnmount(){
+    //     this.props.history.push("/profile")
+    // }
 
     render (){
         const createProduct = this.props.isAdmin ?
@@ -16,30 +22,19 @@ class Profile extends React.Component{
         null;
         // debugger;
 
-        // let products = this.props.products.filter(function(product) {
-        //     if (product === undefined){
-        //         return false;
-        //     }
-        //     return true
-        // }).map((product, idx) =>
-        //     <li key={idx}>
-        //         {product.name}
-        //         <br />
-        //         {product.price}
-        //         <br />
-        //         {product.description}
-        //     </li>
-        // )
+        if (this.props.orders.length === 0){
+            return null;
+        }
 
-        //   const products = this.props.orders.map((product, idx) => 
-        //     <li key={idx}>
-        //         {product.name}
-        //         <br />
-        //         {product.price}
-        //         <br />
-        //         {product.description}
-        //      </li>
-        //   )
+        const products = this.props.orders.map((product, idx) => 
+        <li key={idx}>
+            {product.name}
+            <br />
+            {product.price}
+            <br />
+            {product.description}
+            </li>
+        )
 
         return (
             <div className="profile-head">
@@ -52,11 +47,11 @@ class Profile extends React.Component{
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
                 <p className="my-orders">YOUR RECENT ORDERS</p>
                 <ul>
-                    {/* {products} */}
+                    {products}
                 </ul>
             </div>
         )
     }
 }
 
-export default Profile;
+export default withRouter(Profile);
