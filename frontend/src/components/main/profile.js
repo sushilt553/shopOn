@@ -31,6 +31,7 @@ class Profile extends React.Component{
                 <span className="order-tag-icon">
                     <i className="fas fa-tag"></i>
                 </span>
+                <span className="order-list-image"><img src={product.image_urls[0]} ></img></span>
                 <span className="order-item-details">
                     {product.name} - ${product.price}
                     <br />
