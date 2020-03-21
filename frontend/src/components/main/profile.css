@@ -54,3 +54,19 @@
     margin-bottom: 20px;
     font-size: 25px;
 }
+
+.orders-list {
+    padding-top: 20px;
+    padding-left: 20px;
+    line-height: 1.5;
+    list-style-image: url('<i class="fas fa-tag"></i>');
+}
+
+.orders-list li {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.order-tag-icon {
+    margin-right: 10px;
+}

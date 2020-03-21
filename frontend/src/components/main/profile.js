@@ -28,11 +28,15 @@ class Profile extends React.Component{
 
         const products = this.props.orders.map((product, idx) => 
             <li key={idx}>
-                {product.name}
-                <br />
-                {product.price}
-                <br />
-                {product.description}
+                <span className="order-tag-icon">
+                    <i className="fas fa-tag"></i>
+                </span>
+                <span className="order-item-details">
+                    {product.name} - ${product.price}
+                    <br />
+                    {product.description}
+                    <br />
+                </span>
                 </li>
             )
 
@@ -45,8 +49,8 @@ class Profile extends React.Component{
                     <p className="user-username">Welcome back, {this.props.user}!</p>
                 </section>
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
-                <p className="my-orders">YOUR RECENT ORDERS</p>
-                <ul>
+                <p className="my-orders"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
+                <ul className="orders-list">
                     {products}
                 </ul>
             </div>
