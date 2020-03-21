@@ -40,7 +40,7 @@ class Navbar extends React.Component {
           </Link>
           <Dropdown categories={this.props.categories} />
         </section>
-        <Link to={"/"}>
+        <Link to={"/products"}>
           <h1 className="nav-header">SHOP-ON</h1>
         </Link>
         <section className="nav-comp-2">
