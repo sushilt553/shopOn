@@ -10,7 +10,6 @@ const categories = require("./routes/api/categories");
 const products = require("./routes/api/products");
 const search = require("./routes/api/search");
 
-//heroku deployment
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
