@@ -21,7 +21,7 @@ class Cart extends React.Component{
 
     addToOrder(totalAmount) {
       return () =>
-        this.props.addToOrder({userId: this.props.user._id, orderProducts: this.props.user.cartProducts, rewards: totalAmount })
+        this.props.addToOrder({userId: this.props.user._id, orderProducts: this.props.user.cartProducts, rewards: parseInt(totalAmount) })
         .then(() => this.props.history.push("/profile"))
     }
 

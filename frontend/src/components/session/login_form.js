@@ -48,11 +48,11 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <p className="login-errors">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
-      </ul>
+      </p>
     );
   }
 
@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
                 <p className="login-form-message">
                   Please enter your username and password
                 </p>
-                <p className="login-errors">{this.renderErrors()}</p>
+                {this.renderErrors()}
               </div>
             </div>
               <form onSubmit={this.handleSubmit}>
