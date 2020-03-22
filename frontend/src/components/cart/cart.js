@@ -89,7 +89,8 @@ class Cart extends React.Component{
                   {products}
               </ul>
               <div className="item-purchase-container">
-                <p className="items-total"> Total amount: $ {totalAmount} </p>
+                <p className="items-total"> Total amount: 
+                <span className="dollar-amount"> ${totalAmount} </span> </p>
                 <br />
                 <div className="purchase-btn-container">
                   <button onClick={this.addToOrder}
