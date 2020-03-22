@@ -92,9 +92,17 @@
     background: transparent;
 }
 
-.reward{
+.reward {
     margin-top: 20px;
     font-size: 18px;
     color: green;
     align-self: center;
+}
+
+.reward-description {
+    align-self: center;
+    margin-top: 10px;
+    font-size: 30px;
+    color: green;
+    font-family: 'Dancing Script', cursive;
 }

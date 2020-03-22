@@ -56,6 +56,7 @@ class Profile extends React.Component{
                 </section>
                 {createProduct}
                 <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
+                <p className="reward-description">Earn a point for every dollar you spend!</p>
                 <h1 className="reward">REWARD POINTS: {this.props.rewards.toFixed(2)}</h1>
                 <p className="my-orders"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
                 <ul className="orders-list">
