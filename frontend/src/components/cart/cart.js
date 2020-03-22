@@ -1,5 +1,7 @@
 import React from 'react';
 import './cart.css';
+import {Link} from 'react-router-dom';
+
 class Cart extends React.Component{
     constructor(props){
         super(props);
@@ -94,6 +96,8 @@ class Cart extends React.Component{
                 <span className="dollar-amount"> ${totalAmount} </span> </p>
                 <br />
                 <div className="purchase-btn-container">
+                  <Link to={`/products`}><button className="continue-shopping" >Continue Shopping</button></Link>
+                  <br/>
                   <button onClick={this.addToOrder(totalAmount)}
                     className="cart-purchase-btn"
                   >Place Order</button>
