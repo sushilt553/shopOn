@@ -39,7 +39,7 @@ class ProductIndexItem extends React.Component {
         <div className="product-info-container">
           <Link to={`/products/${this.props.product._id}`}>
             <div className="product-img">
-            <img src={image_urls} ></img>
+            <img src={image_urls} alt="product"></img>
             </div>
             <li className="product-info">
               <div className="product-description">

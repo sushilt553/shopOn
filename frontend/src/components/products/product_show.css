@@ -30,9 +30,9 @@
   margin: 10px;
 }
 .product-show-pix-indiv:hover {
-  -webkit-transform: scale(2);
-  -ms-transform: scale(2);
-  transform: scale(2);
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .product-show-details {
@@ -42,18 +42,18 @@
 }
 
 .product-show-name {
-  font-size: 28px;
+  font-size: 32px;
   padding: 10px;
   text-transform: capitalize;
 }
 
 .product-show-price {
-  font-size: 20px;
+  font-size: 25px;
   padding: 10px;
 }
 
 .product-show-description {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
 }
 

@@ -13,8 +13,10 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchProduct(this.props.product._id);
+    debugger;
     this.props.fetchAllCategories();
+    this.props.fetchAllProducts()
+      .then(() => this.props.fetchProduct(this.props.product._id));
   }
 
   componentDidUpdate(prevProps) {
@@ -48,7 +50,7 @@ class ProductShow extends React.Component {
       <div className="product-show-container">
         <div className="product-show-image">
           {product.image_urls.map((url, i) => (
-            <img className="product-show-pix-indiv" key={i} src={url} />
+            <img className="product-show-pix-indiv" alt="product-show-pix-indiv" key={i} src={url} />
           ))}
         </div>
         <div className="product-show-info">
