@@ -10,6 +10,16 @@ const categories = require("./routes/api/categories");
 const products = require("./routes/api/products");
 const search = require("./routes/api/search");
 
+//heroku deployment
+const path = require('path');
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
+
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
