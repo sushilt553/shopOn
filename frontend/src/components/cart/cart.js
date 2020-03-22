@@ -46,15 +46,15 @@ class Cart extends React.Component{
             </div>
               <div className="item-info-action">
                 <div className="item-info-description">
-                  <p>
+                  <p className="item-name">
                     {product.name}
                   </p> 
                   <br />
-                  <p>
+                  <p className="item-price">
                     ${product.price}
                   </p>
                   <br />
-                  <p>
+                  <p className="item-description">
                     {product.description}
                   </p>
                   <br />
@@ -83,16 +83,20 @@ class Cart extends React.Component{
 
         return (
           <div className="items-container">
-            <h1>Your items</h1>
+            <h1 className="cart-header">Your items</h1>
             <div className="items">
               <ul className="list-items">
                   {products}
-                  Total amount: $ {totalAmount}
-                  <br />
+              </ul>
+              <div className="item-purchase-container">
+                <p className="items-total"> Total amount: $ {totalAmount} </p>
+                <br />
+                <div className="purchase-btn-container">
                   <button onClick={this.addToOrder}
                     className="cart-purchase-btn"
                   >Place Order</button>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
         )
