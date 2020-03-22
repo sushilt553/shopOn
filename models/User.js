@@ -22,6 +22,11 @@ const UserSchema = new Schema({
     default: false
   },
 
+  rewards: {
+    type: Number,
+    default: 0
+  },
+
   cartProducts: {
     type: Array
   },

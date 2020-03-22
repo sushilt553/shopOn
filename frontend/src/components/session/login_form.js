@@ -66,10 +66,11 @@ class LoginForm extends React.Component {
                 <p className="login-form-message">
                   Please enter your username and password
                 </p>
+                <p className="login-errors">{this.renderErrors()}</p>
               </div>
             </div>
               <form onSubmit={this.handleSubmit}>
-                <div>
+                <div className="login-body">
                   <input
                     className="login-form-input"
                     type="text"
@@ -96,7 +97,6 @@ class LoginForm extends React.Component {
                   <button className="demo-btn" onClick={this.props.demoLogin}>
                     Demo Login
                   </button>
-                  {this.renderErrors()}
                 </div>
               </form>
               <div className="login-form-lower-message">

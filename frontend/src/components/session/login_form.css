@@ -31,7 +31,7 @@
 
 .login-form-message {
     color: #7e6c5d;
-    /* margin-top: 10px; */
+    padding-bottom: 10px;
 }
 
 .login-form-input {
@@ -100,4 +100,9 @@
 
 .create-one:hover {
     color: #0b2fa8;
+}
+
+.login-errors {
+    color: tomato;
+    font-weight: bold;
 }

@@ -88,7 +88,8 @@
 }
 
 .signup-errors {
+    text-align: center;
     margin-top: 20px;
-    color: rebeccapurple;
-    /* font-weight: bold; */
+    color: tomato;
+    font-weight: bold;
 }

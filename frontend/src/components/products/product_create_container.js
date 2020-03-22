@@ -9,6 +9,7 @@ const mapStateToProps = state => {
       name: '',
       price: '',
       category: '',
+      image_urls: '',
       description: ''
     },
     formType: 'Create Your Product'

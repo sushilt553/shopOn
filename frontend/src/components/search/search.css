@@ -1,0 +1,29 @@
+.search-results-body {
+  /* justify-content: center; */
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.no-search-results {
+  margin-bottom: 20px;
+}
+
+.search-results-list {
+  display: flex;
+  justify-content: center;
+}
+
+.product-search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-home-link {
+  color: #7e6c5d;
+  border: 1px solid #6f8ff6;
+  padding: 5px;
+  border-radius: 5px;
+}

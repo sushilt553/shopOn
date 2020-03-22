@@ -10,7 +10,6 @@ import { logout } from './actions/session_actions';
 import * as category from './actions/category_actions';
 import * as Product from './actions/product_actions';
 import {searchProducts} from './actions/search_actions';
-import {removeProduct} from './util/session_api_util';
 import {removeFromCart} from './actions/session_actions';
 
 window.removeFromCart = removeFromCart;

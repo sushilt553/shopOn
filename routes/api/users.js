@@ -39,6 +39,8 @@ router.patch(
     }else{
       user.cartProducts = [];
       user.orderProducts = req.body.order;
+      user.rewards = user.rewards + req.body.rewards;
+      // debugger;
       user.save()
       .then(user => res.json(user))
       .catch(err => res.json(err))
@@ -49,6 +51,7 @@ router.patch(
 router.delete(
   "/",
   async(req, res) => {
+    debugger;
     const user = await User.findOne({_id: req.body.userId});
     // debugger;
     await user.cartProducts.remove(req.body.productId);
@@ -83,7 +86,7 @@ router.post("/signup", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
+              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
 
               jwt.sign(
                 payload,
@@ -123,7 +126,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
+        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
 
         jwt.sign(
           payload,

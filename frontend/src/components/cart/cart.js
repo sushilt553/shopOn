@@ -17,9 +17,9 @@ class Cart extends React.Component{
     //     .then(() => this.props.history.push("/products"))
     // }
 
-    addToOrder(e) {
-        e.preventDefault();
-        this.props.addToOrder({userId: this.props.user._id, orderProducts: {order: this.props.user.cartProducts}})
+    addToOrder(totalAmount) {
+      return () =>
+        this.props.addToOrder({userId: this.props.user._id, orderProducts: this.props.user.cartProducts, rewards: totalAmount })
         .then(() => this.props.history.push("/profile"))
     }
 
@@ -80,6 +80,7 @@ class Cart extends React.Component{
         for (let i = 0; i < this.props.cart.length; i++){
             totalAmount = totalAmount + this.props.cart[i].price
         }
+        totalAmount = totalAmount.toFixed(2);
 
         return (
           <div className="items-container">
@@ -93,7 +94,7 @@ class Cart extends React.Component{
                 <span className="dollar-amount"> ${totalAmount} </span> </p>
                 <br />
                 <div className="purchase-btn-container">
-                  <button onClick={this.addToOrder}
+                  <button onClick={this.addToOrder(totalAmount)}
                     className="cart-purchase-btn"
                   >Place Order</button>
                 </div>

@@ -40,18 +40,20 @@ class Navbar extends React.Component {
           </Link>
           <Dropdown categories={this.props.categories} />
         </section>
-        <Link to={"/"}>
+        <Link to={"/products"}>
           <h1 className="nav-header">SHOP-ON</h1>
         </Link>
         <section className="nav-comp-2">
-          <input
-            className="search"
-            onKeyPress={this.keyPressed}
-            value={this.state.name}
-            type="text"
-            placeholder="Search..."
-            onChange={this.updateField("name")}
-          />
+          <div className="search">
+            <i className="fas fa-search"></i>&nbsp;&nbsp;
+            <input
+              onKeyPress={this.keyPressed}
+              value={this.state.name}
+              type="text"
+              placeholder="Search..."
+              onChange={this.updateField("name")}
+            />
+          </div>
           {navComponent}
           <Link className="cart" to={"/cart"}>
            ({this.props.numItems}) CART

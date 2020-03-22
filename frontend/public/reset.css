@@ -10,7 +10,6 @@ ul,
 li,
 strong,
 main,
-button,
 i,
 section,
 img,
@@ -59,8 +58,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="submit"],
-textarea,
-button {
+textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -68,4 +66,18 @@ button {
 button,
 input[type="submit"] {
     cursor: pointer;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    box-sizing: inherit;
+    background: transparent;
+    font-family: "Source Sans Pro", sans-serif;
 }

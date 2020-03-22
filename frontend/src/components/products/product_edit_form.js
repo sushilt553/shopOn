@@ -11,10 +11,11 @@ class ProductEditForm extends React.Component {
   render() {
     let { product, formType, processForm } = this.props;
     if (!product) return null;
-
+    const editProduct = {_id: product._id, name: product.name, category: product.category, price: product.price, description: product.description, image_urls: product.image_urls.join(" ")}
+    // debugger;
     return (
       <ProductCreateForm
-        product = {product}
+        product = {editProduct}
         formType = {formType}
         processForm = {processForm}
         fetchAllCategories = {this.props.fetchAllCategories}

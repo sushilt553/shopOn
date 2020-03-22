@@ -25,7 +25,7 @@ router.get(
     "/",
     // passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        Product.find().limit(20)
+        Product.find().limit(30)
             .then(products => res.json(products))
             .catch(err => res.status(400).json(err))
     }
@@ -34,8 +34,9 @@ router.get(
 router.get(
     "/:id",
     (req, res) => {
+        // debugger;
         Product.findById(req.params.id)
-        .then(product => res.json(product))
+        .then(product => res.json({product}))
         .catch(err => 
             res.status(404).json({noProductFound: 'No product found from the database'}));
     }
@@ -58,6 +59,8 @@ router.post(
         req.body.category = category.id;
 
         const { errors, isValid } = validateProductInput(req.body);
+
+        const images = req.body.image_urls.split(" ")
         
         if (!isValid) {
             return res.status(400).json(errors);
@@ -67,7 +70,8 @@ router.post(
             name: req.body.name,
             price: req.body.price,
             description: req.body.description,
-            category: req.body.category
+            category: req.body.category,
+            image_urls: images
         });
 
         newProduct.save()
@@ -92,6 +96,7 @@ router.patch(
         }
 
         req.body.category = category.id;
+        req.body.image_urls = req.body.image_urls.split(" ");
 
         const { errors, isValid } = validateProductInput(req.body);
 
@@ -99,7 +104,7 @@ router.patch(
           return res.status(400).json(errors);
         }
 
-        product.update(req.body)
+        await product.update(req.body)
         .then(product => res.json(product))
         .catch(err => res.json(err))
     }
