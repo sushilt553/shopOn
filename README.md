@@ -2,7 +2,10 @@
 
 A shopping app where users can shop items by category and earn reward points.
 
-This website is inspired by [Dixie-mech](https://dixiemech.com/)
+This website is inspired by [Dixie-mech](https://dixiemech.com/).
+
+[Live-Site](https://mysterious-harbor-46566.herokuapp.com/)
+
 
 ## Functionality
   * Users can shop items by category.
