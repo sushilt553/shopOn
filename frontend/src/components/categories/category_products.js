@@ -32,6 +32,7 @@ class CategoryProducts extends React.Component{
                     product={product}
                     user={this.props.user}
                     addToCart={this.props.addToCart}
+                    deleteProduct={this.props.deleteProduct}
                 />
             )
 
