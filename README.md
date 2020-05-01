@@ -2,45 +2,41 @@
 
 A shopping app where users can shop items by category and earn reward points.
 
-This website is inspired by [Dixie-mech](https://dixiemech.com/)
+This website is inspired by [Dixie-mech](https://dixiemech.com/).
 
-## Functionality
-  * Users can shop items by category.
-  * Users will receive rewards for every purchase.
-  * Users can save items in their shopping cart.
+[Live-Site](https://mysterious-harbor-46566.herokuapp.com/)
 
-## MVP
-  *  User auth (03/16/2020 - 03/16/2020, 1 day)
-  *  Splash Page & Products (03/17/2020 - 03/17/2020, 1 day)
-  *  Profile & Shopping cart (03/18/2020 - 03/18/2020, 1 day)
-  *  Search (03/19/2020 - 03/19/2020, 1 day)
-  *  Rewards & CSS polishing (03/20/2020 - 03/20/2020, 1 day)
+![ShopOn](https://github.com/sushilt553/shopOn/blob/master/frontend/src/images/shopon_page.png)
+
+## Features
+  * Users can shop different products in this app.
+  * Users can receive rewards on purchases.
+  * Users can save items in their shopping cart and place order later.
 
 ## Technologies
 ShopOn is built using React, Redux, and Express on top of a MongoDB database.
 
-## Group Members
-Gustavo Gutierrez, Jennie Richardson, Sushil Thapa
+## Code highlights
+Empty arrays for the cart and order will be assigned as a default for every new user. Once a user adds an item to the cart or places an order through the cart, user will be updated on the backend with the items added to the cart or items placed on order. Below is the code snippet for that cart-order feature:
+``` javascript
+router.patch(
+  "/:id",
+  async(req, res) => {
+    const user = await User.findOne({_id: req.params.id});
 
-## Work breakdown
-  *  User auth backend
-  *  User auth frontend (Login)
-  *  User auth frontend (Signup)
-  *  User auth CSS (both login and signup)
-  *  Splash Page with NavBar (also CSS)
-  *  HomePage listing products (Product index)
-  *  HomePage CSS
-  *  Products show page 
-  *  Products show page CSS
-  *  User's profile with rewards
-  *  User's profile CSS 
-  *  Shopping cart backend
-  *  Shopping cart edit/remove items
-  *  Shopping cart show (frontend)
-  *  Shopping cart CSS
-  *  Search backend
-  *  Search frontend(show page)
-  *  Searched items show page CSS
-  *  Seeding
-  *  CSS polishing and make sure everything works
-  
+    if (req.body.cart){
+      user.cartProducts.push(req.body.cart)
+      user.save()
+      .then(user => res.json(user))
+      .catch(err => res.json(err))
+    }else{
+      user.cartProducts = [];
+      user.orderProducts = req.body.order;
+      user.rewards = user.rewards + req.body.rewards;
+      user.save()
+      .then(user => res.json(user))
+      .catch(err => res.json(err))
+    }
+  } 
+)
+```
