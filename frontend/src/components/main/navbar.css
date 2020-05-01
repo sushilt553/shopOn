@@ -24,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 35%;
-  justify-content: left;
+  justify-content: space-around;
 }
 
 .nav-comp-1>a {

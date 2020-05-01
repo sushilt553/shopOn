@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import SplashPageContainer from "./main/splash_page_container";
 import LoginFormContainer from "./session/login_form_container";
@@ -14,6 +14,7 @@ import ProductEditContainer from "./products/product_edit_container";
 import CategoryProductsContainer from "./categories/category_products_container";
 import CartContainer from "./cart/cart_container"
 import SearchContainer from './search/search_container';
+import CreatorsContainer from './main/creators';
 
 const App = () => (
 
@@ -21,6 +22,7 @@ const App = () => (
     <NavbarContainer />
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <Route exact path="/creators" component={CreatorsContainer} />
       <ProtectedRoute exact path="/search/:name" component={SearchContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
       <ProtectedRoute exact path={`/categories/:category`} component={CategoryProductsContainer} />

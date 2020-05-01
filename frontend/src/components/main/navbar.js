@@ -39,6 +39,9 @@ class Navbar extends React.Component {
             HOME
           </Link>
           <Dropdown categories={this.props.categories} />
+          <Link className="creators" to={"/creators"}>
+            CREATORS
+          </Link>
         </section>
         <Link to={"/products"}>
           <h1 className="nav-header">SHOP-ON</h1>
