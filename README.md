@@ -4,7 +4,7 @@ A shopping app where users can shop items by category and earn reward points.
 
 This website is inspired by [Dixie-mech](https://dixiemech.com/).
 
-[Live-Site](https://mysterious-harbor-46566.herokuapp.com/)
+[Live-Site](https://shopon1.herokuapp.com/)
 
 ![ShopOn](https://github.com/sushilt553/shopOn/blob/master/frontend/src/images/shopon_page.png)
 
