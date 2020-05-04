@@ -92,7 +92,7 @@ class SignupForm extends React.Component {
               <button className="demo-btn" onClick={this.props.demoLogin}>
                 Demo Login
               </button>
-              <span className="signup-lower-message">Already have an account? <Link className="signup-login-link" to={"/login"}>Login</Link></span>
+            <span className="signup-lower-message"><Link className="signup-login-link" to={"/login"}>Already have an account? Login</Link></span>
           </div>  
         </form > 
       </div>

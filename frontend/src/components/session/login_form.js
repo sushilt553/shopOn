@@ -114,7 +114,7 @@ class LoginForm extends React.Component {
                 </div>
               </form>
               <div className="login-form-lower-message">
-                Don't have an account? <Link className="create-one" to="/signup">Create one</Link>
+                <Link className="create-one" to="/signup">Don't have an account? Create one</Link>
               </div>
           </div>
         </div>
