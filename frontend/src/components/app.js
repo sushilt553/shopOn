@@ -21,7 +21,8 @@ const App = () => (
 
   <div>
     <NavbarContainer />
-    <p className="cart-msg">Item added to cart successfully.</p>
+    {/* <p className="cart-msg">Item added to cart successfully.</p>
+    <p className="remove-cart-msg">Item removed successfully.</p> */}
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <Route exact path="/creators" component={CreatorsContainer} />

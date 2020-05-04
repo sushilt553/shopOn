@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import './navbar.css';
+import '../app.css';
 import Dropdown from './dropdown';
 
 class Navbar extends React.Component {
@@ -61,6 +62,8 @@ class Navbar extends React.Component {
           <Link className="cart" to={"/cart"}>
            ({this.props.numItems}) CART
           </Link>
+          <p className="cart-msg">Item added to cart successfully.</p>
+          <p className="remove-cart-msg">Item removed successfully.</p>
         </section>
       </div>
     );

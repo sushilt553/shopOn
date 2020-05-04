@@ -4,4 +4,21 @@
 
 .display-cart-msg {
     display: block;
+    position: absolute;
+    right: 40px;
+    top: 75px;
+    color: #6f8ff6;
+    background-color: #eeebe3;
+}
+.remove-cart-msg {
+    display: none;
+}
+
+.display-remove-cart-msg {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 75px;
+    color: #6f8ff6;
+    background-color: #eeebe3;
 }

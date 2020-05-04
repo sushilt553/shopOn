@@ -1,5 +1,8 @@
 .nav-main {
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
   flex-grow: 1;
   background-color: #eeebe3;
   border-bottom: 1px solid rgb(111, 143, 246, 0.2);
@@ -7,6 +10,7 @@
   align-items: center;
   font-weight: bold;
   padding: 20px;
+  z-index: 1;
 }
 
 .nav-header {
