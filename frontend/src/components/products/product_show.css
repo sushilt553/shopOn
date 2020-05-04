@@ -14,8 +14,8 @@
 .product-show-image {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
-  height: 700px;
+  width: auto;
+  height: 40%;
   justify-content: center;
   align-content: center;
   /* border: 1px solid black; */

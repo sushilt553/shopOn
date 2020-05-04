@@ -15,11 +15,13 @@ import CategoryProductsContainer from "./categories/category_products_container"
 import CartContainer from "./cart/cart_container"
 import SearchContainer from './search/search_container';
 import CreatorsContainer from './main/creators';
+import "./app.css";
 
 const App = () => (
 
   <div>
     <NavbarContainer />
+    <p className="cart-msg">Item added to cart successfully.</p>
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <Route exact path="/creators" component={CreatorsContainer} />

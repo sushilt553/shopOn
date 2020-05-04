@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     this.clearedErrors = false;
   }
 
@@ -43,6 +44,19 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user);
+  }
+
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    let username = "sirdemo"
+    let password = "hunter12demo"
+
+    let user = {
+      username,
+      password
+    };
+
+    this.props.demoLogin(user)
   }
 
   renderErrors() {
@@ -89,10 +103,10 @@ class SignupForm extends React.Component {
               <input className="signup-form-submit"
                 type = "submit"
                 value = "CREATE MY ACCOUNT" />
-              <button className="demo-btn" onClick={this.props.demoLogin}>
+              <button className="demo-btn" onClick={this.handleDemoSubmit}>
                 Demo Login
               </button>
-              <span className="signup-lower-message">Already have an account? <Link className="signup-login-link" to={"/login"}>Login</Link></span>
+            <span className="signup-lower-message"><Link className="signup-login-link" to={"/login"}>Already have an account? Login</Link></span>
           </div>  
         </form > 
       </div>

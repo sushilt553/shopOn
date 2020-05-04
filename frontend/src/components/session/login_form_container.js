@@ -12,11 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     login: user => dispatch(login(user)),
-    fetchAllCategories: () => dispatch(fetchAllCategories()),
-    demoLogin: () => dispatch(login({
-      username: "sirdemo",
-      password: "hunter12demo"
-    }))
+    fetchAllCategories: () => dispatch(fetchAllCategories())
   }
 }
 
