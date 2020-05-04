@@ -10,6 +10,9 @@ class ProductIndexItem extends React.Component {
 
   addToCart(e){
     e.preventDefault();
+    let cartMsg = document.getElementsByClassName("cart-msg");
+    cartMsg[0].classList.add("display-cart-msg");
+    setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 1000);
     // debugger;
     this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
     // .then(() => this.props.history.push("/products"))
