@@ -28,7 +28,7 @@ class Navbar extends React.Component {
       </Link>
     ) : (
       <Link className="account" to={"/login"}>
-        ACCOUNT
+        LOGIN
       </Link>
     );
 
