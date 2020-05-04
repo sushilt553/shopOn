@@ -13,10 +13,7 @@ const mapDispatchToProps = dispatch => {
   return {
     signup: user => dispatch(signup(user)),
     fetchAllCategories: () => dispatch(fetchAllCategories()),
-    demoLogin: () => dispatch(login({
-      username: 'sirdemo',
-      password: 'hunter12demo'
-    }))
+    demoLogin: (user) => dispatch(login(user))
   };
 };
 
