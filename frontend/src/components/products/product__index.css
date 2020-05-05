@@ -75,6 +75,10 @@
   align-self: center;
 }
 
+.cart-btn:hover {
+  background-color: #0b2fa8;
+}
+
 .edit-btn{
   text-align: center;
   border: 1px solid #1b2b42;
@@ -84,6 +88,10 @@
   background-color: #1b2b42;
 }
 
+.edit-btn:hover {
+  background-color: #0b2fa8;
+}
+
 .delete-btn{
   text-align: center;
   border: 1px solid #1b2b42;
@@ -91,4 +99,8 @@
   width: 40%;
   color: white;
   background-color: #1b2b42;
+}
+
+.delete-btn:hover {
+  background-color: #0b2fa8;
 }
