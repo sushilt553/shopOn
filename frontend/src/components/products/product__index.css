@@ -34,7 +34,7 @@
 }
 
 .product-img {
-  border: 1px solid #6f8ff6;
+  border: 1px solid #1b2b42;
   width: 300px;
   height: 300px;
 }
@@ -59,31 +59,33 @@
 }
 
 .cart-btn {
+  width: 200px;
   color: white;
   text-align: center;
-  margin: 10px;
-  border: 1px solid #6f8ff6;
+  margin-bottom: 10px;
+  border: 1px solid #1b2b42;
   border-radius: 3px;
-  background-color: #6f8ff6;
+  background-color: #1b2b42;
   padding: 7px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  align-self: center;
 }
 
 .edit-btn{
   text-align: center;
-  border: 1px solid #6f8ff6;
+  border: 1px solid #1b2b42;
   border-radius: 3px;
   width: 40%;
   color: white;
-  background-color: #6f8ff6;
+  background-color: #1b2b42;
 }
 
 .delete-btn{
   text-align: center;
-  border: 1px solid #6f8ff6;
+  border: 1px solid #1b2b42;
   border-radius: 3px;
   width: 40%;
   color: white;
-  background-color: #6f8ff6;
+  background-color: #1b2b42;
 }

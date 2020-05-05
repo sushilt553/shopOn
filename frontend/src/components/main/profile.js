@@ -48,21 +48,23 @@ class Profile extends React.Component{
         }
 
         return (
-            <div className="profile-head">
-                <button className="profile-logout" onClick={this.props.logout}>LOGOUT</button>
-                <section className="acc-user">
-                    <h1 className="my-account">MY ACCOUNT</h1>
-                    <p className="user-username">Welcome back, {this.props.user}!</p>
-                </section>
-                {createProduct}
-                <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
-                <p className="reward-description">Earn a point for every dollar you spend!</p>
-                <h1 className="reward">REWARD POINTS: {this.props.rewards.toFixed(2)}</h1>
-                <p className="my-orders"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
-                <ul className="orders-list">
-                    {products}
-                </ul>
-            </div>
+            <section className="profile-container">
+                <div className="profile-head">
+                    <button className="profile-logout" onClick={this.props.logout}>LOGOUT</button>
+                    <section className="acc-user">
+                        <h1 className="my-account">MY ACCOUNT</h1>
+                        <p className="user-username">Welcome back, {this.props.user}!</p>
+                    </section>
+                    {createProduct}
+                    <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
+                    <p className="reward-description">Earn a point for every dollar you spend!</p>
+                    <h1 className="reward">REWARD POINTS: {this.props.rewards.toFixed(2)}</h1>
+                    <p className="my-orders"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
+                    <ul className="orders-list">
+                        {products}
+                    </ul>
+                </div>
+            </section>
         )
     }
 }
