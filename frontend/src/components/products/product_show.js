@@ -29,7 +29,7 @@ class ProductShow extends React.Component {
 
   addToCart(e) {
     e.preventDefault();
-    if (this.props.user._id) {
+    if (Object.keys(this.props.user).length > 0) {
       let cartMsg = document.getElementsByClassName("cart-msg");
       cartMsg[0].classList.add("display-cart-msg");
       setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
