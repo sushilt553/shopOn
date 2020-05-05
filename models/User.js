@@ -35,6 +35,11 @@ const UserSchema = new Schema({
     type: Array
   },
 
+  // reviews: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Review"
+  // }],
+
   // cartProducts: {
   //   type: [Schema.Types.ObjectId],
   //   ref: "Product"
