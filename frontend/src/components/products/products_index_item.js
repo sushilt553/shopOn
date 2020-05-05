@@ -5,17 +5,19 @@ import './product__index.css';
 class ProductIndexItem extends React.Component {
   constructor(props){
     super(props);
-    this.addToCart = this.addToCart.bind(this);
+    this.addItemToCart = this.addItemToCart.bind(this);
   }
 
-  addToCart(e){
+  addItemToCart(e) {
     e.preventDefault();
-    let cartMsg = document.getElementsByClassName("cart-msg");
-    cartMsg[0].classList.add("display-cart-msg");
-    setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
-    // debugger;
-    this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
-    // .then(() => this.props.history.push("/products"))
+    if (this.props.user._id) {
+      let cartMsg = document.getElementsByClassName("cart-msg");
+      cartMsg[0].classList.add("display-cart-msg");
+      setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
+      this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
+    } else {
+      this.props.history.push('/login');
+    }
   }
 
   render(){
@@ -32,7 +34,7 @@ class ProductIndexItem extends React.Component {
       </div>
       :
       null;
-    // debugger;
+    
     let image_urls = '';
     if (this.props.product.image_urls && this.props.product.image_urls.length > 0){
       image_urls = this.props.product.image_urls[0]
@@ -56,7 +58,7 @@ class ProductIndexItem extends React.Component {
             </li>
           </Link>
             {editDelete}
-            <button className="cart-btn" onClick={this.addToCart}>Add to Cart</button>
+            <button className="cart-btn" onClick={this.addItemToCart}>Add to Cart</button>
         </div>
       );
     }

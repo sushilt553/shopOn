@@ -5,11 +5,10 @@ import { fetchAllCategories } from '../../actions/category_actions';
 import { addToCart } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
   product: state.entities.products[ownProps.match.params.id],
-  user: state.session.user,
-  isAdmin: state.session.user.isAdmin
+  isAdmin: state.session.user ? state.session.user.isAdmin : false,
+  user: state.session.user ? state.session.user : null
   }
 }
 

@@ -14,7 +14,7 @@ const mSP = (state, ownProps) => {
   if (category){
     product.category = category.name;
   }
-  // debugger;
+  
   return {
     product: product,
     formType: 'Update Your Product'

@@ -41,7 +41,6 @@ class Cart extends React.Component{
     }
 
     render(){
-        // debugger;
 
         if (this.props.products.length === 0){
           return null;

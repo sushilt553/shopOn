@@ -7,8 +7,8 @@ import {addToCart} from '../../actions/session_actions';
 const mapStateToProps = state => {
     return {
         products: Object.values(state.entities.products),
-        isAdmin: state.session.user.isAdmin,
-        user: state.session.user
+        isAdmin: state.session.user ? state.session.user.isAdmin : false,
+        user: state.session.user ? state.session.user : null
     }
 }
 

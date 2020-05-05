@@ -6,7 +6,6 @@ export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 
 export const receiveAllProducts = products => {
-    // debugger;
     return {
         type: RECEIVE_ALL_PRODUCTS,
         products
@@ -14,7 +13,6 @@ export const receiveAllProducts = products => {
 }
 
 export const receiveProduct = product => {
-    // debugger;
     return {
         type: RECEIVE_PRODUCT,
         product
@@ -29,7 +27,6 @@ export const removeProduct = productId => {
 }
 
 export const receiveProductErrors = errors => {
-    // debugger;
     return {
         type: RECEIVE_PRODUCT_ERRORS,
         errors
