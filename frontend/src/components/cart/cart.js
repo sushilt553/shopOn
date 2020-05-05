@@ -20,12 +20,11 @@ class Cart extends React.Component{
     //     .then(() => this.props.history.push("/products"))
     // }
 
-    handleRemove(e) {
-      e.preventDefault();
+    handleRemove(productId) {
       let cartMsg = document.getElementsByClassName("remove-cart-msg");
-      cartMsg[0].classList.add("display-remove-cart-msg");
-      setTimeout(() => cartMsg[0].classList.remove("display-remove-cart-msg"), 2000);
-  
+      return () => this.props.removeFromCart({ userId: this.props.user._id, productId: productId})
+      .then(cartMsg[0].classList.add("display-remove-cart-msg"))
+      .then(setTimeout(() => cartMsg[0].classList.remove("display-remove-cart-msg"), 2000));
     }
 
     addToOrder(totalAmount) {
@@ -72,11 +71,7 @@ class Cart extends React.Component{
                 </div>
                 <div className="cart-remove-btn-container">
                   <button
-                    onClick={() =>
-                      this.props
-                      .removeFromCart({userId: this.props.user._id, productId: product._id})
-                      // .then(() => this.handleRemove)
-                    }
+                  onClick={this.handleRemove(product._id)}
                     className="cart-remove-btn"
                     >
                     Remove from cart
