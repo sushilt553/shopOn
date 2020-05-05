@@ -6,6 +6,12 @@ This website is inspired by [Dixie-mech](https://dixiemech.com/).
 
 [Live-Site](https://shopon1.herokuapp.com/)
 
+[Sushil Thapa](https://github.com/sushilt553)
+
+[Jennie Richardson](https://github.com/jbiakcin)
+
+[Gustavo Gutierrez](https://github.com/guticode04)
+
 ![ShopOn](https://github.com/sushilt553/shopOn/blob/master/frontend/src/images/shopon_page.png)
 
 ## Features
