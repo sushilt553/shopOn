@@ -17,6 +17,10 @@ export const updateProduct = productData => {
     return axios.patch(`/api/products/${productData._id}`, productData)
 }
 
+export const updateReviewProduct = productData => {
+    return axios.patch(`/api/products/${productData._id}/reviews`, productData)
+}
+
 export const deleteProduct = productId => {
     return axios.delete(`/api/products/${productId}`)
 }
