@@ -7,8 +7,8 @@
     position: absolute;
     right: 40px;
     top: 75px;
-    color: #6f8ff6;
-    background-color: #eeebe3;
+    color: orange;
+    background-color: #1b2b42;
 }
 .remove-cart-msg {
     display: none;
@@ -19,6 +19,6 @@
     position: absolute;
     right: 0px;
     top: 75px;
-    color: #6f8ff6;
-    background-color: #eeebe3;
+    color: orange;
+    background-color: #1b2b42;
 }

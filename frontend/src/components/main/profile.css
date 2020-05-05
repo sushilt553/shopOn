@@ -1,7 +1,13 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+}
+
 .profile-head {
     display: flex;
     flex-direction: column;
     margin: 150px 100px;
+    width: 900px;
 }
 
 .profile-logout,
@@ -15,10 +21,10 @@
     font-weight: bold;
     font-size: 30px;
     letter-spacing: 0.1em;
-    background-color: #6f8ff6;
+    background-color: #1b2b42;
     padding: 5px 10px;
     border-radius: 4px;
-    color: whitesmoke;
+    color: orange;
 }
 
 .create-a-product {
@@ -26,11 +32,11 @@
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 0.1em;
-    background-color: #6f8ff6;
+    background-color: #1b2b42;
     padding: 5px 10px;
     border-radius: 4px;
     margin-bottom: 20px;
-    color: whitesmoke;
+    color: orange;
 }
 
 .my-orders {
@@ -62,7 +68,7 @@
 }
 
 .my-account {
-    color: #6f8ff6;
+    color: #1b2b42;
     margin-bottom: 20px;
     font-size: 25px;
 }
@@ -95,7 +101,7 @@
 .reward {
     margin-top: 20px;
     font-size: 18px;
-    color: green;
+    color: #1b2b42;
     align-self: center;
 }
 
@@ -103,6 +109,6 @@
     align-self: center;
     margin-top: 10px;
     font-size: 30px;
-    color: green;
-    font-family: 'Dancing Script', cursive;
+    color: #1b2b42;
+    /* font-family: 'Dancing Script', cursive; */
 }
