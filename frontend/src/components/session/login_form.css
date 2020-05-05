@@ -45,10 +45,6 @@
     box-sizing: border-box;
 }
 
-::placeholder {
-    color: #aaa0a0;
-}
-
 .login-form-submit {
     width: 100%;
     padding: 12px 14px;
