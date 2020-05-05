@@ -9,7 +9,7 @@ const users = require('./routes/api/users');
 const categories = require("./routes/api/categories");
 const products = require("./routes/api/products");
 const search = require("./routes/api/search");
-// const reviews = require("./routes/api/reviews");
+const reviews = require("./routes/api/reviews");
 
 const path = require('path');
 

@@ -6,16 +6,20 @@ class ProductShow extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = this.props.reviewProduct;
     //state
     // this.editProduct = this.editProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.update = this.update.bind(this);
+    this.submitReview = this.submitReview.bind(this);
   }
 
   componentDidMount(){
-    debugger;
+    // debugger;
     this.props.fetchAllCategories();
     this.props.fetchAllProducts()
+      .then(() => this.props.fetchReviews())
       .then(() => this.props.fetchProduct(this.props.product._id));
   }
 
@@ -26,6 +30,17 @@ class ProductShow extends React.Component {
     if (currentProduct !== prevProduct) {
       this.props.fetchProduct(currentProduct);
     }
+  }
+
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  async submitReview(e) {
+    e.preventDefault();
+    await this.setState({productId: this.props.product._id});
+    await this.props.postReview(this.state);
+    this.props.fetchProduct(this.props.match.params.id);
   }
 
   addToCart(e) {
@@ -45,10 +60,13 @@ class ProductShow extends React.Component {
 
   render(){
     const { product } = this.props;
+
     if (!product){
       return null;
     }
+    let reviews = this.props.product.reviews.map((review) => <li>{review}</li>);
     return (
+      <>
       <div className="product-show-container">
         <div className="product-show-image">
           {product.image_urls.map((url, i) => (
@@ -80,9 +98,19 @@ class ProductShow extends React.Component {
               ) : null
             }
           </div>
+          <form onSubmit={this.submitReview}>
+            <label htmlFor="reviews">Write a review
+              <textarea id="reviews" value = {this.state.description} rows="4" cols="30" onChange={this.update('description')}></textarea>
+            </label>
+            <input type="submit" value="Submit review"/>
+          </form>            
             <button className="product-cart-btn" onClick={this.addToCart}>Add to cart</button>
         </div>
       </div>
+        {
+         reviews
+        }
+      </>
     );
   }
 }

@@ -9,11 +9,11 @@ const productsReducer = (state = {}, action) => {
             action.products.map(product => newState[product._id] = product);
             return Object.assign({}, state, newState);
         case RECEIVE_PRODUCT:
-            return Object.assign({}, state, {[action.product._id]: action.product});
+            return Object.assign({}, state, {[action.product.product._id]: action.product.product});
         case REMOVE_PRODUCT:
             newState = Object.assign({}, state);
-            delete newState[action.productId]
-            return newState
+            delete newState[action.productId];
+            return newState;
         default:
             return state;
     }

@@ -13,20 +13,20 @@ router.get(
     }
 )
 
-// router.post(
-//     "/",
-//     async(req, res) => {
-//         let review = new Review({description: req.body.description});
-//         await review.save();
-//         let product = await Product.findById(req.body.productId);
-//         let user = await User.findById(req.body.userId);
+router.post(
+    "/",
+    async(req, res) => {
+        // debugger;
+        let user = await User.findById(req.body.user);
+        let review = new Review({description: req.body.description, user: user.username});
+        await review.save();
+        let product = await Product.findById(req.body.productId);
 
-//         product.reviews.push(review.id);
-//         user.reviews.push(review.id);
+        product.reviews.push(review.id);
 
-//         await product.save();
-//         await user.save();
+        await product.save();
+        res.json(review);
+    }
+)
 
-//         res.json(review);
-//     }
-// )
+module.exports = router;

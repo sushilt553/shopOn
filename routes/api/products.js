@@ -113,19 +113,19 @@ router.patch(
     }
 )
 
-router.patch(
-    "/:id/reviews",
-    async (req, res) => {
-        let review = new Review({ description: req.body.description, user: req.body.user });
-        await review.save();
-        const product = await Product.findOne({ _id: req.params.id });
+// router.patch(
+//     "/:id/reviews",
+//     async (req, res) => {
+//         let review = new Review({ description: req.body.description, user: req.body.user });
+//         await review.save();
+//         const product = await Product.findOne({ _id: req.params.id });
 
-        product.reviews.push(review.id);
+//         product.reviews.push(review.id);
         
-        await product.save();
-        res.json(product);
-    }
-)
+//         await product.save();
+//         res.json(product);
+//     }
+// )
 
 
 router.delete(
