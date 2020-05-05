@@ -41,7 +41,8 @@ small {
 }
 
 body {
-    background-color: #e6e3dc;
+    background-color: rgba(14, 32, 57, 0.7);
+    
 }
 
 ul {

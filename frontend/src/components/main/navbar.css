@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   flex-grow: 1;
-  background-color: #eeebe3;
+  background-color: #1b2b42;
   border-bottom: 1px solid rgb(111, 143, 246, 0.2);
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
   padding: 20px;
   z-index: 1;
 }
-
+/* rgb(27, 43, 66, 0.3) */
 .nav-header {
   font-size: 40px;
   font-family: 'Bungee Shade', cursive;
