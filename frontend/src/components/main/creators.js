@@ -53,7 +53,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-angellist"></i>
+            <i className="fab fa-angellist"></i>
           </a>
            <a
             href="https://gusgutierrez.com"
@@ -69,7 +69,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
           </a>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-angellist"></i>
+            <i className="fab fa-angellist"></i>
           </a>
            <a
             href="http://www.jbiakcin.com/"
@@ -139,7 +139,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
           </a>
         </div>
       </div>
@@ -193,7 +193,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-angellist"></i>
+            <i className="fab fa-angellist"></i>
           </a>
            <a
             href="http://tsushil.com/"
@@ -209,7 +209,7 @@ export default () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
           </a>
         </div>
       </div>
