@@ -5,7 +5,6 @@ import { fetchAllCategories } from '../../actions/category_actions';
 import { addToCart } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
   product: state.entities.products[ownProps.match.params.id],
   user: state.session.user,
