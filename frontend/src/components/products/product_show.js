@@ -18,9 +18,9 @@ class ProductShow extends React.Component {
   componentDidMount(){
     // debugger;
     this.props.fetchAllCategories();
-    this.props.fetchAllProducts()
-      .then(() => this.props.fetchReviews())
-      .then(() => this.props.fetchProduct(this.props.product._id));
+    this.props.fetchReviews()
+    .then(() =>this.props.fetchAllProducts())
+    .then(() => this.props.fetchProduct(this.props.product._id));
   }
 
   componentDidUpdate(prevProps) {
@@ -40,6 +40,7 @@ class ProductShow extends React.Component {
     e.preventDefault();
     await this.setState({productId: this.props.product._id});
     await this.props.postReview(this.state);
+    this.setState({description: ""});
     this.props.fetchProduct(this.props.match.params.id);
   }
 
@@ -64,7 +65,8 @@ class ProductShow extends React.Component {
     if (!product){
       return null;
     }
-    let reviews = this.props.product.reviews.map((review) => <li>{review}</li>);
+    // debugger;
+    let reviews = this.props.product.reviews.map((review) => <li>{this.props.state.entities.reviews[review].description}</li>);
     return (
       <>
       <div className="product-show-container">

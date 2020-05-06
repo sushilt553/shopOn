@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
   product: findProduct,
+  state: state,
   // reviews: reviews,
   reviewProduct: {description: "", productId: productId, user: state.session.user._id},
   user: state.session.user,
