@@ -24,6 +24,9 @@
 .product-show-pix-indiv {
   width: 300px;
   height: 300px;
+  object-fit: contain;
+  border: 1px solid #1b2b42;
+  /* border: 1px solid #e6e3dc; */
   border-radius: 8px;
   margin: 10px;
 }

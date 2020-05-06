@@ -26,7 +26,7 @@ class ProductCreateForm extends React.Component {
         category: this.state.category,
         description: this.state.description
       }
-      // debugger;
+      
       this.props.processForm(product)
       .then(() => this.props.history.push('/products'));
     }else{

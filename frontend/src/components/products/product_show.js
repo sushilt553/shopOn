@@ -29,10 +29,14 @@ class ProductShow extends React.Component {
 
   addToCart(e) {
     e.preventDefault();
-    let cartMsg = document.getElementsByClassName("cart-msg");
-    cartMsg[0].classList.add("display-cart-msg");
-    setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
-    this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
+    if (Object.keys(this.props.user).length > 0) {
+      let cartMsg = document.getElementsByClassName("cart-msg");
+      cartMsg[0].classList.add("display-cart-msg");
+      setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
+      this.props.addToCart({ userId: this.props.user._id, cartProducts: { cart: this.props.product._id } })
+    } else {
+      this.props.history.push('/login');
+    }
   }
 
   deleteProduct(e) {
@@ -42,7 +46,7 @@ class ProductShow extends React.Component {
   }
 
   render(){
-    const { product } = this.props;
+    const { product, user } = this.props;
     if (!product){
       return null;
     }

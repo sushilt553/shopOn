@@ -9,8 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         category: category,
         categoryProducts: state.entities.categoryProducts,
-        isAdmin: state.session.user.isAdmin,
-        user: state.session.user
+        isAdmin: state.session.user ? state.session.user.isAdmin : false,
+        user: state.session.user ? state.session.user : null
     }
 }
 

@@ -20,8 +20,6 @@ class Profile extends React.Component{
             <Link to="/products/new" className="create-a-product"><button>Create a new Product</button></Link>
         :
         null;
-        // debugger;
-        
         if (this.props.products.length === 0){
             return null;
         }

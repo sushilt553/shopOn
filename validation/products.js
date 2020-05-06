@@ -5,7 +5,6 @@ const validNumber = require("./valid-number");
 module.exports = function validateProductInput(data) {
   let errors = {};
   
-  // debugger;
   data.name = validText(data.name) ? data.name : "";
   data.description = validText(data.description) ? data.description : "";
   data.price = validNumber(parseInt(data.price)) ? data.price : "";

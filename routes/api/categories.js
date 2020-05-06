@@ -18,9 +18,7 @@ router.get(
 router.get(
   "/:name",
   async(req, res) => {
-    // debugger;
     const id = await Category.find({name: req.params.name})
-    // debugger;
     Product.find({category: id})
     .then((products) => res.json(products))
     .catch(err => res.status(400).json(err))

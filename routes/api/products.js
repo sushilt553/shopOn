@@ -34,7 +34,6 @@ router.get(
 router.get(
     "/:id",
     (req, res) => {
-        // debugger;
         Product.findById(req.params.id)
         .then(product => res.json({product}))
         .catch(err => 
@@ -46,7 +45,6 @@ router.post(
     "/",
     // passport.authenticate("jwt", { session: false }),
     async(req, res) => {
-        // debugger;
         let category;
         let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {
@@ -85,7 +83,6 @@ router.patch(
     async(req, res) => {
         const product = await Product.findOne({_id: req.params.id})
         
-        // debugger;
         let category;
         let findCategory = await Category.findOne({ name: req.body.category });
         if (!findCategory) {

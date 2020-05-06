@@ -28,11 +28,11 @@ const App = () => (
       <Route exact path="/creators" component={CreatorsContainer} />
       <ProtectedRoute exact path="/search/:name" component={SearchContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
-      <ProtectedRoute exact path={`/categories/:category`} component={CategoryProductsContainer} />
+      <Route exact path={`/categories/:category`} component={CategoryProductsContainer} />
       <ProtectedRoute exact path="/products/:id/edit" component={ProductEditContainer} />
       <ProtectedRoute exact path="/products/new" component={ProductCreateContainer} />
-      <ProtectedRoute exact path={`/products/:id`} component={ProductShowPageContainer} />
-      <ProtectedRoute exact path="/products" component={ProductsIndexContainer} />
+      <Route exact path={`/products/:id`} component={ProductShowPageContainer} />
+      <Route exact path="/products" component={ProductsIndexContainer} />
   
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
