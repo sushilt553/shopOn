@@ -5,6 +5,7 @@ import './product__index.css';
 class ProductsIndex extends React.Component {
 
     componentDidMount(){
+        this.props.fetchReviews();
         this.props.fetchAllProducts();
         this.props.fetchAllCategories();
     }

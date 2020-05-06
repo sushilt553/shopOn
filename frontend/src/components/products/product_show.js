@@ -66,7 +66,13 @@ class ProductShow extends React.Component {
       return null;
     }
     // debugger;
-    let reviews = this.props.product.reviews.map((review) => <li>{this.props.state.entities.reviews[review].description}</li>);
+    let reviews = this.props.product.reviews.map((review) => 
+    <li>
+      {this.props.state.entities.reviews[review].description}
+      <br/>
+      Reviewed by {this.props.state.entities.reviews[review].user}
+    </li>);
+
     return (
       <>
       <div className="product-show-container">
