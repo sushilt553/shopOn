@@ -1,113 +1,173 @@
 .product-show-container {
-  display: flex;
-  margin: 200px 60px;
-  justify-content: space-around;
+    display: flex;
+    margin: 200px 60px;
+    justify-content: space-around;
 }
+
 .product-show-info {
-  margin: 20px;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    margin: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .product-show-image {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  height: 40%;
-  justify-content: center;
-  align-content: center;
-  object-fit: contain;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: 40%;
+    justify-content: center;
+    align-content: center;
+    object-fit: contain;
 }
 
 .product-show-pix-indiv {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;
-  border: 1px solid #1b2b42;
-  /* border: 1px solid #e6e3dc; */
-  border-radius: 8px;
-  margin: 10px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border: 1px solid #1b2b42;
+    /* border: 1px solid #e6e3dc; */
+    border-radius: 8px;
+    margin: 10px;
 }
+
 .product-show-pix-indiv:hover {
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .product-show-details {
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
 }
 
 .product-show-name {
-  font-size: 32px;
-  padding: 10px;
-  text-transform: capitalize;
+    font-size: 32px;
+    padding: 10px;
+    text-transform: capitalize;
 }
 
 .product-show-price {
-  font-size: 25px;
-  padding: 10px;
+    font-size: 25px;
+    padding: 10px;
 }
 
 .product-show-description {
-  font-size: 18px;
-  padding: 10px;
+    font-size: 18px;
+    padding: 10px;
 }
 
 .product-show-action-btns {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-  letter-spacing: 0.1em;
-  font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
 }
 
 .product-show-edit-btn {
-  width: 40%;
-  background-color: #1b2b42;
-  color: white;
-  text-align: center;
-  padding: 12px 14px;
-  border-radius: 3px;
+    width: 40%;
+    background-color: #1b2b42;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    border-radius: 3px;
 }
 
 .product-show-edit-btn:hover {
-  background-color: #0b2fa8;
+    background-color: #0b2fa8;
 }
 
 .product-show-delete-btn {
-  width: 40%;
-  background-color: #1b2b42;
-  font-size: 16px;
-  text-align: center;
-  color: white;
-  padding: 12px 14px;
-  border-radius: 3px;
+    width: 40%;
+    background-color: #1b2b42;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 3px;
 }
 
 .product-show-delete-btn:hover {
-  background-color: #0b2fa8;
+    background-color: #0b2fa8;
 }
 
 .product-cart-btn {
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-  line-height: 2;
-  background-color: #1b2b42;
-  color: white;
-  text-transform: uppercase;
-  border-radius: 3px;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  width: 300px;
-  align-self: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    line-height: 2;
+    background-color: #1b2b42;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 3px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    width: 300px;
+    align-self: center;
 }
 
 .product-cart-btn:hover {
-  background-color: #0b2fa8;
+    background-color: #0b2fa8;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    border: 1px solid black;
+}
+
+.submit-review {
+    border: 1px solid black;
+    padding: 5px 9px;
+    border-radius: 10px;
+    background-color: #1b2b42;
+    color: white;
+}
+
+.submit-review:hover, .review-delete:hover {
+    background-color: #0b2fa8;
+    color: white;
+}
+
+.product-reviews-list {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.reviews-list {
+    margin: 15px;
+    list-style: none;
+}
+
+.review-delete {
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background-color: #1b2b42;
+    color: white;
+}
+
+.reviewer {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.write-review {
+    font-style: italic;
+}
+
+.review-description {
+    font-size: 14px;
+    margin-bottom: 5px;
 }

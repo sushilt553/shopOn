@@ -4,6 +4,9 @@ const validateProductInput = require("../../validation/products");
 const Product = require("../../models/Product");
 const passport = require('passport');
 const Category = require('../../models/Category');
+const Review = require("../../models/Review");
+const User = require("../../models/User");
+
 const {
   singlePublicFileUpload,
   multiplePublicFileUpload,
@@ -106,6 +109,21 @@ router.patch(
         .catch(err => res.json(err))
     }
 )
+
+// router.patch(
+//     "/:id/reviews",
+//     async (req, res) => {
+//         let review = new Review({ description: req.body.description, user: req.body.user });
+//         await review.save();
+//         const product = await Product.findOne({ _id: req.params.id });
+
+//         product.reviews.push(review.id);
+        
+//         await product.save();
+//         res.json(product);
+//     }
+// )
+
 
 router.delete(
     "/:id",

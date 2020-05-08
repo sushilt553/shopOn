@@ -3,6 +3,7 @@ import ProductsIndex from './products_index';
 import { fetchAllProducts, deleteProduct } from '../../actions/product_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import {addToCart} from '../../actions/session_actions';
+import { fetchAllReviews } from '../../actions/review_actions';
 
 const mapStateToProps = state => {
     return {
@@ -17,7 +18,8 @@ const mapDispatchToProps = dispatch => {
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         deleteProduct: (productId) => dispatch(deleteProduct(productId)),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
-        addToCart: (cart) => dispatch(addToCart(cart))
+        addToCart: (cart) => dispatch(addToCart(cart)),
+        fetchReviews: () => dispatch(fetchAllReviews())
     }
 }
 
