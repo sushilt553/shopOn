@@ -67,11 +67,15 @@ class ProductShow extends React.Component {
     }
     // debugger;
     let reviews = this.props.product.reviews.map((review) => 
-    <li>
-      {this.props.state.entities.reviews[review].description}
-      <br/>
+    <li className="reviews-list">
       Reviewed by {this.props.state.entities.reviews[review].user}
+      <br/>
+      {this.props.state.entities.reviews[review].description}
     </li>);
+
+    if (reviews.length === 0) {
+      reviews = <p className="reviews-list">"No Reviews yet!"</p>
+    }
 
     return (
       <>
@@ -106,15 +110,17 @@ class ProductShow extends React.Component {
               ) : null
             }
           </div>
-          <form onSubmit={this.submitReview}>
-            <label htmlFor="reviews">Write a review
-              <textarea id="reviews" value = {this.state.description} rows="4" cols="30" onChange={this.update('description')}></textarea>
-            </label>
-            <input type="submit" value="Submit review"/>
+          <form className="review-form" onSubmit={this.submitReview}>
+            <label className="write-review" htmlFor="reviews">Write a review</label>
+            <br/>
+            <textarea id="reviews" value = {this.state.description} rows="4" cols="30" onChange={this.update('description')} />
+            <br/>
+            <input className="submit-review" type="submit" value="Submit review"/>
           </form>            
             <button className="product-cart-btn" onClick={this.addToCart}>Add to cart</button>
         </div>
       </div>
+      <p className="product-reviews-list">Customer Reviews</p>
         {
          reviews
         }
