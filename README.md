@@ -6,6 +6,8 @@ This website is inspired by [Dixie-mech](https://dixiemech.com/).
 
 [Live-Site](https://shopon1.herokuapp.com/)
 
+## Creators
+
 [Sushil Thapa](https://github.com/sushilt553)
 
 [Jennie Richardson](https://github.com/jbiakcin)
