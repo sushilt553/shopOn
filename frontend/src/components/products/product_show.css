@@ -118,4 +118,25 @@ textarea {
 
 .product-reviews-list {
   font-size: 20px;
+  margin: 15px;
 }
+
+.reviews-list {
+  margin: 15px;
+  list-style: none;
+}
+
+.review-delete {
+  border: 1px solid black;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+
+.reviewer {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
