@@ -85,7 +85,7 @@ class ProductShow extends React.Component {
       }
     });
 
-    if (reviews.length === 0) {
+    if (reviews.join("").length === 0) {
       reviews = <p className="reviews-list">"No Reviews yet!"</p>
     }
 
