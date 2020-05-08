@@ -3,7 +3,7 @@ import {RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/rev
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {};
-    debugger;
+    // debugger;
     switch (action.type) {
         case RECEIVE_ALL_REVIEWS:
             action.reviews.reviews.map(review => newState[review._id] = review);

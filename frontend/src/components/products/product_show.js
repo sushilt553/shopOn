@@ -82,7 +82,6 @@ class ProductShow extends React.Component {
       }else if (this.props.reviews[review]){
         return <li key={i} className="reviews-list">
           <p className="reviewer">Reviewed by {this.props.reviews[review].user}</p>
-          <br/>
           <p className="review-description">{this.props.reviews[review].description}</p>
         </li>
       }

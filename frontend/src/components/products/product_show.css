@@ -1,6 +1,6 @@
 .product-show-container {
     display: flex;
-    margin: 200px 60px;
+    margin: 200px 60px 40px 60px;
     justify-content: space-around;
 }
 
@@ -133,18 +133,14 @@ textarea {
     color: white;
 }
 
-.submit-review:hover, .review-delete:hover {
+.submit-review:hover,
+.review-delete:hover {
     background-color: #0b2fa8;
     color: white;
 }
 
-.product-reviews-list {
-    font-size: 20px;
-    margin: 15px;
-}
-
 .reviews-list {
-    margin: 15px;
+    margin: 15px 15px 15px 80px;
     list-style: none;
 }
 
@@ -170,4 +166,9 @@ textarea {
 .review-description {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+.product-reviews-list {
+    font-size: 20px;
+    margin: 15px 0 0 80px;
 }
