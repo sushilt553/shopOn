@@ -3,7 +3,7 @@ import { fetchProduct, updateProduct, deleteProduct, fetchAllProducts } from '..
 import ProductShow from './product_show';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { addToCart } from '../../actions/session_actions';
-import { postReview, fetchAllReviews } from '../../actions/review_actions';
+import { postReview, fetchAllReviews, updateReview, deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let findProduct;
@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
   product: findProduct,
-  state: state,
+  reviews: state.entities.reviews,
   // reviews: reviews,
   reviewProduct: {description: "", productId: productId, user: state.session.user._id},
   user: state.session.user,
@@ -32,6 +32,8 @@ const mapDispatchToProps = dispatch => ({
   addToCart: (cart) => dispatch(addToCart(cart)),
   fetchAllProducts: () => dispatch(fetchAllProducts()),
   postReview: (review) => dispatch(postReview(review)),
-  fetchReviews: () => dispatch(fetchAllReviews())
+  fetchReviews: () => dispatch(fetchAllReviews()),
+  // updateReview: (review) => dispatch(updateReview(review)),
+  deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);

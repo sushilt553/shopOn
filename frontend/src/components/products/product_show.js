@@ -65,13 +65,25 @@ class ProductShow extends React.Component {
     if (!product){
       return null;
     }
+
     // debugger;
-    let reviews = this.props.product.reviews.map((review) => 
-    <li className="reviews-list">
-      Reviewed by {this.props.state.entities.reviews[review].user}
-      <br/>
-      {this.props.state.entities.reviews[review].description}
-    </li>);
+    let reviews = this.props.product.reviews.map((review, i) => {
+      if (this.props.reviews[review] && this.props.reviews[review].user === this.props.user.username) {
+       return  <li key={i} className="reviews-list">
+          Reviewed by {this.props.reviews[review].user}
+          <br />
+          {this.props.reviews[review].description}
+         <button className="review-edit">Edit</button>
+         <button className="review-delete" onClick={() => this.props.deleteReview(review)}>Delete</button>
+        </li>
+      }else if (this.props.reviews[review]){
+        return <li key={i} className="reviews-list">
+          Reviewed by {this.props.reviews[review].user}
+          <br/>
+          {this.props.reviews[review].description}
+        </li>
+      }
+    });
 
     if (reviews.length === 0) {
       reviews = <p className="reviews-list">"No Reviews yet!"</p>

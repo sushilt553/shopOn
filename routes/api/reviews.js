@@ -29,4 +29,22 @@ router.post(
     }
 )
 
+// router.patch(
+//     "/:id",
+//     async(req, res) => {
+//         let review = await Review.findOne({_id: req.params.id});
+//         await review.update(req.body);
+//         res.json(review);
+//     }
+// )
+
+router.delete(
+    "/:id",
+    async(req, res) => {
+        await Review.remove({_id: req.params.id})
+        // debugger;
+        res.json({msg: 'Success'})
+    }
+)
+
 module.exports = router;
