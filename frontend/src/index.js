@@ -12,13 +12,6 @@ import * as Product from './actions/product_actions';
 import {searchProducts} from './actions/search_actions';
 import {removeFromCart} from './actions/session_actions';
 
-window.removeFromCart = removeFromCart;
-
-window.createProduct = Product.createProduct;
-window.category = category.fetchCategoryProducts;
-window.search = searchProducts;
-// window.remove = removeProduct;
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -42,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     store = configureStore({});
   }
-
-  window.store = store;
   
   const root = document.getElementById('root');
 
