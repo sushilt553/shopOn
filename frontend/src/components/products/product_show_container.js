@@ -14,13 +14,21 @@ const mapStateToProps = (state, ownProps) => {
     productId = findProduct._id;
     // reviews = findProduct.reviews.map((review) => state.entities.reviews[review].description);
   }
+  let user = null;
+  let admin = null;
+  let stateUser = {};
+  if (state.session.user) {
+    user = state.session.user._id
+    admin = state.session.user.isAdmin
+    stateUser = state.session.user
+  } 
   return {
   product: findProduct,
   reviews: state.entities.reviews,
   // reviews: reviews,
-  reviewProduct: {description: "", productId: productId, user: state.session.user._id},
-  user: state.session.user,
-  isAdmin: state.session.user.isAdmin
+  reviewProduct: {description: "", productId: productId, user: user},
+  user: stateUser,
+  isAdmin: admin
   }
 }
 

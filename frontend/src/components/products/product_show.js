@@ -38,6 +38,12 @@ class ProductShow extends React.Component {
 
   async submitReview(e) {
     e.preventDefault();
+    // This code redirects the guest user to the login page.
+
+    // if (Object.keys(this.props.user).length === 0) {
+    //   this.props.history.push("/login");
+    // }
+
     await this.setState({productId: this.props.product._id});
     await this.props.postReview(this.state);
     this.setState({description: ""});
@@ -90,54 +96,74 @@ class ProductShow extends React.Component {
     if (reviews.join("").length === 0) {
       reviews = <p className="reviews-list">"No Reviews yet!"</p>
     }
+    // debugger;
+    let form;
+    if (Object.keys(this.props.user).length > 0) {
+      form = <form className="review-form" onSubmit={this.submitReview}>
+        <label className="write-review" htmlFor="reviews">
+          Write a review
+        </label>
+        <br />
+        <textarea
+          id="reviews"
+          value={this.state.description}
+          rows="4"
+          cols="30"
+          onChange={this.update("description")}
+          placeholder="Tell us what you think!"
+        />
+        <br />
+        <input className="submit-review" type="submit" value="Submit review" />
+      </form>; 
+    }else{
+      form = <Link to={`/login`}><button className="review-redirect">Sign in to write a review</button></Link>
+    }
 
     return (
       <>
-      <div className="product-show-container">
-        <div className="product-show-image">
-          {product.image_urls.map((url, i) => (
-            <img className="product-show-pix-indiv" alt="product-show-pix-indiv" key={i} src={url} />
-          ))}
-        </div>
-        <div className="product-show-info">
-          <div className="product-show-details">
-            <h2 className="product-show-name">{product.name}</h2>
-            <span className="product-show-price">${product.price}</span>
-            <p className="product-show-description">{product.description}</p>
+        <div className="product-show-container">
+          <div className="product-show-image">
+            {product.image_urls.map((url, i) => (
+              <img
+                className="product-show-pix-indiv"
+                alt="product-show-pix-indiv"
+                key={i}
+                src={url}
+              />
+            ))}
           </div>
-          <div className="product-show-action-btns">
-            {
-              this.props.isAdmin ? (
-              <>
-                <Link 
-                  to={`/products/${product._id}/edit`}
-                  className="product-show-edit-btn"
-                >
-                  Edit
-                </Link>
-                <button 
-                  className="product-show-delete-btn" 
-                  onClick={this.deleteProduct}>
-                  Delete
-                </button>
-              </>
-              ) : null
-            }
+          <div className="product-show-info">
+            <div className="product-show-details">
+              <h2 className="product-show-name">{product.name}</h2>
+              <span className="product-show-price">${product.price}</span>
+              <p className="product-show-description">{product.description}</p>
+            </div>
+            <div className="product-show-action-btns">
+              {this.props.isAdmin ? (
+                <>
+                  <Link
+                    to={`/products/${product._id}/edit`}
+                    className="product-show-edit-btn"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    className="product-show-delete-btn"
+                    onClick={this.deleteProduct}
+                  >
+                    Delete
+                  </button>
+                </>
+              ) : null}
+            </div>
+            <button className="product-cart-btn" onClick={this.addToCart}>
+              Add to cart
+            </button>
+            {form}
           </div>
-            <button className="product-cart-btn" onClick={this.addToCart}>Add to cart</button>
-          <form className="review-form" onSubmit={this.submitReview}>
-            <label className="write-review" htmlFor="reviews">Write a review</label>
-            <br/>
-            <textarea id="reviews" value = {this.state.description} rows="4" cols="30" onChange={this.update('description')} />
-            <br/>
-            <input className="submit-review" type="submit" value="Submit review"/>
-          </form>            
         </div>
-      </div>
-      <p className="product-reviews-list">Customer Reviews</p>
-        {
-         reviews
-        }
+        <p className="product-reviews-list">Customer Reviews</p>
+        {reviews}
       </>
     );
   }

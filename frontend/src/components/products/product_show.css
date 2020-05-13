@@ -134,7 +134,7 @@ textarea {
 }
 
 .submit-review:hover,
-.review-delete:hover {
+.review-delete:hover, .review-redirect:hover {
     background-color: #0b2fa8;
     color: white;
 }
@@ -171,4 +171,17 @@ textarea {
 .product-reviews-list {
     font-size: 20px;
     margin: 15px 0 0 80px;
+}
+
+.review-redirect {
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background-color: #1b2b42;
+    color: white;
+}
+
+#reviews {
+    padding: 10px;
 }
