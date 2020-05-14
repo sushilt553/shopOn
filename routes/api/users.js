@@ -42,33 +42,71 @@ router.get(
     }
 )
 
-router.patch(
-  "/cart_items/:id",
+router.post(
+  "/cart",
   (req, res) => {
-    Cart.findById(req.params.id)
-    .then(cart => {
-      cart.user = req.body.userId;
-      cart.product = req.body.productId;
-      cart.save()
-      .then(cart => res.json(cart))
+    const cart = new Cart({
+      user: req.body.userId,
+      product: req.body.productId
     })
-    .catch(err => res.status(404).json({noCartItems: 'Product not found'}))
+
+    cart.save()
+    .then(cart => res.json(cart))
+    .catch(err => res.status(404).json(err))
   }
 )
 
-router.patch(
-  "/order_items/:id",
+
+  //   Cart.findById(req.params.id)
+  //   .then(cart => {
+  //     cart.user = req.body.userId;
+  //     cart.product = req.body.productId;
+  //     cart.save()
+  //     .then(cart => res.json(cart))
+  //   })
+  //   .catch(err => res.status(404).json({noCartItems: 'Product not found'}))
+  // }
+
+router.post(
+  "/order",
   (req, res) => {
-    Order.findById(req.params.id)
-    .then(order => {
-      order.user = req.body.userId;
-      order.product = req.body.productId;
-      order.save()
-      .then(order => res.json(order))
+    const order = new Order({
+      user: req.body.userId,
+      product: req.body.productId
     })
-    .catch(err => res.status(404).json({noOrderItems: 'Product not found'}))
+    order.save()
+    .then(order => res.json(order))
+    .catch(err => res.status(404).json(err))
   }
 )
+
+router.delete(
+  "/",
+  (req, res) => {
+    Cart.find({product: req.body.productId, user: req.body.userId})
+    .then(cart => {
+      delete cart;
+      res.json({
+        success: true
+      })
+    })
+    .catch(err => res.status(404).json(err))
+  }
+)
+
+// router.patch(
+//   "/order_items/:id",
+//   (req, res) => {
+//     Order.findById(req.params.id)
+//     .then(order => {
+//       order.user = req.body.userId;
+//       order.product = req.body.productId;
+//       order.save()
+//       .then(order => res.json(order))
+//     })
+//     .catch(err => res.status(404).json({noOrderItems: 'Product not found'}))
+//   }
+// )
 
 
 // router.patch(

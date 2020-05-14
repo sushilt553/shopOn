@@ -16,18 +16,34 @@ export const login = userData => {
   return axios.post("/api/users/login", userData);
 };
 
+// export const updateCart = cart => {
+//   return axios.patch(`/api/users/${cart.userId}`, cart.cartProducts);
+// }
+
+// export const updateOrder = order => {
+//   return axios.patch(`/api/users/${order.userId}`, {order: order.orderProducts, rewards: order.rewards});
+// }
+
+// export const removeProduct = productData => {
+//   return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}});
+// }
+
 export const updateCart = cart => {
-  return axios.patch(`/api/users/${cart.userId}`, cart.cartProducts);
+  return axios.post(`/api/users/cart`, cart)
 }
 
 export const updateOrder = order => {
-  return axios.patch(`/api/users/${order.userId}`, {order: order.orderProducts, rewards: order.rewards});
+  return axios.post(`/api/users/order`, order)
 }
 
 export const removeProduct = productData => {
-  return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}});
+  return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}})
 }
 
-// export const getUser = () => {
-//   return axios.get(`/api/users/current`);
-// }
+export const getCart = userId => {
+  return axios.get(`/api/users/${userId}/cart_items`);
+}
+
+export const getOrder = userId => {
+  return axios.get(`/api/users/${userId}/order_items`);
+}
