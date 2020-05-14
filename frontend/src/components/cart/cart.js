@@ -35,9 +35,9 @@ class Cart extends React.Component{
     
     componentDidMount() {
       // debugger;
-      this.props.getCart(this.props.user._id);
       this.props.fetchAllCategories();
       this.props.fetchAllProducts();
+      this.props.getCart(this.props.user._id);
       // .then(() => this.props.history.push("/products"))
     }
 

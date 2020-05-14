@@ -13,7 +13,7 @@ const mapStateToProps = state => {
             cart = state.entities.cartProducts.map(product => state.entities.products[product.product]);
         }
     }
-    
+    // debugger;
     return {
         cart: cart,
         user: state.session.user,

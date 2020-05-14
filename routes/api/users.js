@@ -47,8 +47,8 @@ router.post(
   "/cart",
   (req, res) => {
     const cart = new Cart({
-      user: req.body.userId,
-      product: req.body.productId
+      user: req.body.user,
+      product: req.body.product
     })
     
     cart.save()
@@ -72,8 +72,8 @@ router.post(
   "/order",
   (req, res) => {
     const order = new Order({
-      user: req.body.userId,
-      product: req.body.productId
+      user: req.body.user,
+      product: req.body.product
     })
     order.save()
     .then(order => res.json(order))
@@ -84,7 +84,7 @@ router.post(
 router.delete(
   "/",
   (req, res) => {
-    Cart.find({product: req.body.productId, user: req.body.userId})
+    Cart.find({product: req.body.product, user: req.body.user})
     .then(cart => {
       delete cart;
       res.json({

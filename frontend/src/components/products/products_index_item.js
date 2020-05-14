@@ -12,10 +12,11 @@ class ProductIndexItem extends React.Component {
     e.preventDefault();
     if (Object.keys(this.props.user).length > 0) {
       let cartMsg = document.getElementsByClassName("cart-msg");
+
       cartMsg[0].classList.add("display-cart-msg");
       setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
       
-      this.props.addToCart({ userId: this.props.user._id, productId: this.props.product._id })
+      this.props.addToCart({ user: this.props.user._id, product: this.props.product._id })
     } else {
       this.props.history.push('/login');
     }
