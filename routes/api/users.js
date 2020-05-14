@@ -29,7 +29,7 @@ router.get(
 router.get(
     "/:id/cart_items",
     async(req, res) => {
-      debugger;
+      // debugger;
       let cart = await Cart.find({user: req.params.id})
       res.json(cart)
     }
@@ -84,9 +84,9 @@ router.post(
 router.delete(
   "/",
   (req, res) => {
-    Cart.find({product: req.body.product, user: req.body.user})
-    .then(cart => {
-      delete cart;
+    debugger
+    Cart.findOneAndDelete({product: req.body.product, user: req.body.user})
+    .then(() => {
       res.json({
         success: true
       })

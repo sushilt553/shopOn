@@ -37,7 +37,8 @@ export const updateOrder = order => {
 }
 
 export const removeProduct = productData => {
-  return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}})
+  // return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}})
+  return axios.delete(`/api/users`, { data: { product: productData.product, user: productData.user } })
 }
 
 export const getCart = userId => {

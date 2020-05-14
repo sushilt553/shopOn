@@ -4,7 +4,7 @@ const cartReducer = (state = [], action) => {
     switch (action.type) {
         case RECEIVE_ORDER_ITEM:
             if (Array.isArray(action.order)) {
-                return [...state, ...action.order]
+                return action.order;
             }else{
                 return [...state, action.order]
             }

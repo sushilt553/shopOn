@@ -22,7 +22,8 @@ class Cart extends React.Component{
 
     handleRemove(productId) {
       let cartMsg = document.getElementsByClassName("remove-cart-msg");
-      return () => this.props.removeFromCart({ userId: this.props.user._id, productId: productId})
+      // debugger;
+      this.props.removeFromCart({ user: this.props.user._id, product: productId})
       .then(cartMsg[0].classList.add("display-remove-cart-msg"))
       .then(setTimeout(() => cartMsg[0].classList.remove("display-remove-cart-msg"), 2000));
     }
@@ -71,7 +72,7 @@ class Cart extends React.Component{
                 </div>
                 <div className="cart-remove-btn-container">
                   <button
-                  onClick={this.handleRemove(product._id)}
+                  onClick={() => this.handleRemove(product._id)}
                     className="cart-remove-btn"
                     >
                     Remove from cart

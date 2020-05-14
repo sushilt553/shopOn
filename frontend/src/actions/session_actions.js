@@ -88,7 +88,7 @@ export const addToOrder = order => dispatch => {
 
 export const removeFromCart = productData => dispatch => {
   return APIUtil.removeProduct(productData)
-  .then(() => dispatch(removeItemFromCart(productData.productId)))
+  .then(() => dispatch(removeItemFromCart(productData.product)))
 }
 
 export const getCart = userId => dispatch => {
