@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Profile from './profile';
-import { logout, getOrder } from '../../actions/session_actions';
+import { logout, getOrder, getCart } from '../../actions/session_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts} from '../../actions/product_actions';
 
@@ -32,7 +32,8 @@ const mapDispatchToProps = dispatch => {
         logout: () => dispatch(logout()),
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
-        getOrder: (userId) => dispatch(getOrder(userId))
+        getOrder: (userId) => dispatch(getOrder(userId)),
+        // getCart: (userId) => dispatch(getCart(userId))
     }
 }
 

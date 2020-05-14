@@ -1,4 +1,4 @@
-import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM, RECEIVE_ORDER_ITEM } from '../actions/session_actions';
+import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM, REMOVE_CART_ITEMS } from '../actions/session_actions';
 
 const cartReducer = (state = [], action) => {
     // debugger;
@@ -22,7 +22,7 @@ const cartReducer = (state = [], action) => {
                 arr.splice(index, 1);
             }
             return arr;
-        case RECEIVE_ORDER_ITEM:
+        case REMOVE_CART_ITEMS:
             return [];
         default:
             return state;

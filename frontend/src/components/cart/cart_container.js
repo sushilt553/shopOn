@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Cart from './cart';
-import { addToOrder, removeFromCart, getCart } from '../../actions/session_actions';
+import { addToOrder, removeFromCart, getCart, removeCartItems } from '../../actions/session_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts } from '../../actions/product_actions';
 
@@ -27,7 +27,8 @@ const mapDispatchToProps = dispatch => {
         removeFromCart: (productData) => dispatch(removeFromCart(productData)),
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
-        getCart: (userId) => dispatch(getCart(userId))
+        getCart: (userId) => dispatch(getCart(userId)),
+        removeCartItems: () => dispatch(removeCartItems())
         // refetchUser: () => dispatch(refetchUser())
     }
 }

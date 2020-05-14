@@ -7,6 +7,7 @@ export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
 export const RECEIVE_ORDER_ITEM= "RECEIVE_ORDER_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+export const REMOVE_CART_ITEMS = "REMOVE_CART_ITEMS";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -21,6 +22,10 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
+
+export const removeCartItems = () => ({
+  type: REMOVE_CART_ITEMS
+})
 
 // export const addItemToCart = (cart) => ({
 //   type: RECEIVE_CART_ITEM,
@@ -88,7 +93,7 @@ export const addToOrder = order => dispatch => {
 
 export const removeFromCart = productData => dispatch => {
   return APIUtil.removeProduct(productData)
-  .then(() => dispatch(removeItemFromCart(productData.product)))
+  .then(() => dispatch(removeItemFromCart(productData.productId)))
 }
 
 export const getCart = userId => dispatch => {
