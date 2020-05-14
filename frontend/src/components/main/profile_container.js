@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Profile from './profile';
-import { logout } from '../../actions/session_actions';
+import { logout, getOrder } from '../../actions/session_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts} from '../../actions/product_actions';
 
@@ -8,9 +8,17 @@ const mapStateToProps = state => {
     let orders = [];
     if (Object.values(state.entities.products).length > 0) {
         // orders = state.session.user.orderProducts.map(order => state.entities.products[order]);
+        
+        if (state.entities.orderProducts.length > 0) {
+            orders = state.entities.orderProducts.map(order => state.entities.products[order.product]);
+        }
+        // if (state.entities.orderProducts.product) {
+        //     orders = state.entities.orderProducts.product
+        // }
     }
     
     return {
+        currentUser: state.session.user,
         user: state.session.user.username,
         rewards: state.session.user.rewards,
         isAdmin: state.session.user.isAdmin,
@@ -23,7 +31,8 @@ const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
         fetchAllProducts: () => dispatch(fetchAllProducts()),
-        fetchAllCategories: () => dispatch(fetchAllCategories())
+        fetchAllCategories: () => dispatch(fetchAllCategories()),
+        getOrder: (userId) => dispatch(getOrder(userId))
     }
 }
 

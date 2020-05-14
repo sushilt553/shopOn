@@ -6,8 +6,10 @@ import {withRouter} from 'react-router-dom';
 class Profile extends React.Component{
 
     componentDidMount(){
+        // debugger;
         this.props.fetchAllCategories();
-        this.props.fetchAllProducts()
+        this.props.fetchAllProducts();
+        this.props.getOrder(this.props.currentUser._id);
         // .then(() => this.props.history.push("/products"))
     }
 

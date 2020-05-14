@@ -60,7 +60,7 @@ class ProductIndexItem extends React.Component {
             </li>
           </Link>
             {editDelete}
-            <button className="cart-btn" onClick={() => this.addItemToCart}>Add to Cart</button>
+            <button className="cart-btn" onClick={this.addItemToCart}>Add to Cart</button>
         </div>
       );
     }

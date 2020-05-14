@@ -38,7 +38,7 @@ router.get(
 router.get(
     "/:id/order_items",
     (req, res) => {
-      Order.find({"user": req.params.id})
+      Order.find({user: req.params.id})
       .then(order => res.json(order))
     }
 )
@@ -70,14 +70,26 @@ router.post(
 
 router.post(
   "/order",
-  (req, res) => {
-    const order = new Order({
-      user: req.body.user,
-      product: req.body.product
-    })
-    order.save()
-    .then(order => res.json(order))
-    .catch(err => res.status(404).json(err))
+  async(req, res) => {
+    let orders = [];
+    // debugger
+    for (let i = 0; i < req.body.product.length; i++) {
+      let order = new Order({
+        user: req.body.user,
+        product: req.body.product[i]._id
+      })
+      await order.save();
+      orders.push(order)
+    }
+    res.json(orders);
+    // let orders = req.body.product.map(p => {
+    //   let order = new Order({
+    //     user: req.body.user,
+    //     product: p
+    //   });
+    //   order.save()
+    // })
+    // res.json(orders)
   }
 )
 
