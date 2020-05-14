@@ -4,6 +4,9 @@ import jwt_decode from "jwt-decode";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
+export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
+export const RECEIVE_ORDER_ITEM= "RECEIVE_ORDER_ITEM";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -18,6 +21,21 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
+
+export const addItemToCart = (cart) => ({
+  type: RECEIVE_CART_ITEM,
+  cart
+})
+
+export const addItemToOrder = (order) => ({
+  type: RECEIVE_ORDER_ITEM,
+  order
+})
+
+export const removeItemFromCart = (item) => ({
+  type: REMOVE_CART_ITEM,
+  item
+})
 
 export const signup = user => dispatch =>
   APIUtil.signup(user)
@@ -53,15 +71,20 @@ export const logout = () => dispatch => {
 
 export const addToCart = cart => dispatch => {
   return APIUtil.updateCart(cart)
-  .then(res => dispatch(receiveCurrentUser(res.data)))
+  .then(() => dispatch(receiveCurrentUser(cart)))
 }
 
 export const addToOrder = order => dispatch => {
   return APIUtil.updateOrder(order)
-  .then(res => dispatch(receiveCurrentUser(res.data)))
+  .then(() => dispatch(addItemToOrder(order)))
 }
 
 export const removeFromCart = productData => dispatch => {
   return APIUtil.removeProduct(productData)
-  .then((res) => dispatch(receiveCurrentUser(res.data)))
+  .then(() => dispatch(removeItemFromCart(productData.productId)))
 }
+
+// export const refetchUser = () => dispatch => {
+//   return APIUtil.getUser()
+//   .then((res) => dispatch(receiveCurrentUser(res.data)))
+// }

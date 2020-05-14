@@ -6,12 +6,6 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-//test
-import * as category from './actions/category_actions';
-import * as Product from './actions/product_actions';
-import {searchProducts} from './actions/search_actions';
-import {removeFromCart} from './actions/session_actions';
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -20,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setAuthToken(localStorage.jwtToken);
 
     const decodedUser = jwt_decode(localStorage.jwtToken);
-
+    
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
 
     store = configureStore(preloadedState);

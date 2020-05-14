@@ -27,3 +27,7 @@ export const updateOrder = order => {
 export const removeProduct = productData => {
   return axios.delete(`/api/users`, {data: {productId: productData.productId, userId: productData.userId}});
 }
+
+// export const getUser = () => {
+//   return axios.get(`/api/users/current`);
+// }

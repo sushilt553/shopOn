@@ -4,13 +4,17 @@ import categoryProductsReducer from './category_products_reducer';
 import categoriesReducer from './categories_reducer';
 import searchReducer from './search_reducer';
 import reviewsReducer from './reviews_reducer';
+import cartReducer from './cart_reducer';
+import orderReducer from './order_reducer';
 
 const entitiesReducer = combineReducers({
     products: productsReducer,
     categories: categoriesReducer,
     categoryProducts: categoryProductsReducer,
     searchProducts: searchReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    cartProducts: cartReducer,
+    orderProducts: orderReducer 
 })
 
 export default entitiesReducer;

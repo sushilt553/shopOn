@@ -19,7 +19,10 @@ router.get(
       id: req.user.id,
       username: req.user.username,
       email: req.user.email,
-      isAdmin: req.user.isAdmin
+      isAdmin: req.user.isAdmin,
+      rewards: req.user.rewards,
+      orderProducts: req.user.orderProducts, 
+      cartProducts: req.user.cartProducts
     });
   }
 );
@@ -31,16 +34,18 @@ router.patch(
 
     if (req.body.cart){
       user.cartProducts.push(req.body.cart)
-      user.save()
-      .then(user => res.json(user))
-      .catch(err => res.json(err))
+      await user.save()
+      // res.json(user);
+      // .then(user => res.json(user))
+      // .catch(err => res.json(err))
     }else{
       user.cartProducts = [];
       user.orderProducts = req.body.order;
       user.rewards = user.rewards + req.body.rewards;
-      user.save()
-      .then(user => res.json(user))
-      .catch(err => res.json(err))
+      await user.save()
+      // res.json(user);
+      // .then(user => res.json(user))
+      // .catch(err => res.json(err))
     }
   } 
 )
@@ -50,8 +55,8 @@ router.delete(
   async(req, res) => {
     const user = await User.findOne({_id: req.body.userId});
     await user.cartProducts.remove(req.body.productId);
-    user.save()
-      .then((user) => res.json(user));
+    await user.save()
+      // .then((user) => res.json(req.body.productId));
   }
 )
 
