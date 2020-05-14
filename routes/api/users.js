@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const User = require('../../models/User');
 const Product = require('../../models/Product');
+const Cart = require('../../models/Cart');
+const Order = require('../../models/Order');
 const passport = require("passport");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
@@ -20,45 +22,87 @@ router.get(
       username: req.user.username,
       email: req.user.email,
       isAdmin: req.user.isAdmin,
-      rewards: req.user.rewards,
-      orderProducts: req.user.orderProducts, 
-      cartProducts: req.user.cartProducts
     });
   }
 );
 
-router.patch(
-  "/:id",
-  async(req, res) => {
-    const user = await User.findOne({_id: req.params.id});
-
-    if (req.body.cart){
-      user.cartProducts.push(req.body.cart)
-      await user.save()
-      // res.json(user);
-      // .then(user => res.json(user))
-      // .catch(err => res.json(err))
-    }else{
-      user.cartProducts = [];
-      user.orderProducts = req.body.order;
-      user.rewards = user.rewards + req.body.rewards;
-      await user.save()
-      // res.json(user);
-      // .then(user => res.json(user))
-      // .catch(err => res.json(err))
+router.get(
+    "/:id/cart_items",
+    (req, res) => {
+      Cart.find({"user": req.params.userId})
+      .then(cart => res.json(cart))
     }
-  } 
 )
 
-router.delete(
-  "/",
-  async(req, res) => {
-    const user = await User.findOne({_id: req.body.userId});
-    await user.cartProducts.remove(req.body.productId);
-    await user.save()
-      // .then((user) => res.json(req.body.productId));
+router.get(
+    "/:id/order_items",
+    (req, res) => {
+      Order.find({"user": req.params.userId})
+      .then(order => res.json(order))
+    }
+)
+
+router.patch(
+  "/cart_items/:id",
+  (req, res) => {
+    Cart.findById(req.params.id)
+    .then(cart => {
+      cart.user = req.body.userId;
+      cart.product = req.body.productId;
+      cart.save()
+      .then(cart => res.json(cart))
+    })
+    .catch(err => res.status(404).json({noCartItems: 'Product not found'}))
   }
 )
+
+router.patch(
+  "/order_items/:id",
+  (req, res) => {
+    Order.findById(req.params.id)
+    .then(order => {
+      order.user = req.body.userId;
+      order.product = req.body.productId;
+      order.save()
+      .then(order => res.json(order))
+    })
+    .catch(err => res.status(404).json({noOrderItems: 'Product not found'}))
+  }
+)
+
+
+// router.patch(
+//   "/:id",
+//   async(req, res) => {
+//     const user = await User.findOne({_id: req.params.id});
+
+//     if (req.body.cart){
+//       user.cartProducts.push(req.body.cart)
+//       await user.save()
+//       // res.json(user);
+//       // .then(user => res.json(user))
+//       // .catch(err => res.json(err))
+//     }else{
+//       user.cartProducts = [];
+//       user.orderProducts = req.body.order;
+//       user.rewards = user.rewards + req.body.rewards;
+//       await user.save()
+//       // res.json(user);
+//       // .then(user => res.json(user))
+//       // .catch(err => res.json(err))
+//     }
+//   } 
+// )
+
+// router.delete(
+//   "/",
+//   async(req, res) => {
+//     const user = await User.findOne({_id: req.body.userId});
+//     await user.cartProducts.remove(req.body.productId);
+//     await user.save()
+//       // .then((user) => res.json(req.body.productId));
+//   }
+// )
 
 router.post("/signup", (req, res) => {
   const { errors, isValid } = validateSignupInput(req.body);
@@ -86,7 +130,7 @@ router.post("/signup", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
+              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards};
 
               jwt.sign(
                 payload,
@@ -126,7 +170,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards, orderProducts: user.orderProducts, cartProducts: user.cartProducts };
+        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards};
 
         jwt.sign(
           payload,

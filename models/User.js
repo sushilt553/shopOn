@@ -27,14 +27,6 @@ const UserSchema = new Schema({
     default: 0
   },
 
-  cartProducts: {
-    type: Array
-  },
-
-  orderProducts: {
-    type: Array
-  },
-
   // reviews: [{
   //   type: Schema.Types.ObjectId,
   //   ref: "Review"
