@@ -79,6 +79,7 @@ router.post(
         product: req.body.product[i]._id
       })
       await order.save();
+      await Cart.findOneAndDelete({ product: req.body.product[i]._id, user: req.body.user })
       orders.push(order)
     }
     res.json(orders);
