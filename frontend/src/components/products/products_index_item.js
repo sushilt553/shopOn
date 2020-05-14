@@ -16,7 +16,7 @@ class ProductIndexItem extends React.Component {
       cartMsg[0].classList.add("display-cart-msg");
       setTimeout(() => cartMsg[0].classList.remove("display-cart-msg"), 2000);
       this.props.addToCart({ user: this.props.user._id, product: this.props.product._id })
-      debugger
+      
     } else {
       this.props.history.push('/login');
     }
@@ -60,7 +60,7 @@ class ProductIndexItem extends React.Component {
             </li>
           </Link>
             {editDelete}
-            <button className="cart-btn" onClick={this.addItemToCart}>Add to Cart</button>
+            <button className="cart-btn" onClick={() => this.addItemToCart}>Add to Cart</button>
         </div>
       );
     }

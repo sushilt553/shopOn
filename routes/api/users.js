@@ -84,7 +84,6 @@ router.post(
 router.delete(
   "/",
   (req, res) => {
-    debugger
     Cart.findOneAndDelete({product: req.body.product, user: req.body.user})
     .then(() => {
       res.json({
