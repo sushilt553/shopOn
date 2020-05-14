@@ -1,12 +1,12 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_ORDER_ITEM } from '../actions/session_actions';
 
-const orderReducer = (state = [], action) => {
+const cartReducer = (state = [], action) => {
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            return action.currentUser.orderProducts
+        case RECEIVE_ORDER_ITEM:
+            return [...state, action.order]
         default:
             return state;
     }
 }
 
-export default orderReducer;
+export default cartReducer;

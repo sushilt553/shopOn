@@ -71,7 +71,7 @@ export const logout = () => dispatch => {
 
 export const addToCart = cart => dispatch => {
   return APIUtil.updateCart(cart)
-  .then(() => dispatch(receiveCurrentUser(cart)))
+  .then(() => dispatch(addItemToCart(cart)))
 }
 
 export const addToOrder = order => dispatch => {

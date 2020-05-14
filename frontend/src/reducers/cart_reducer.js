@@ -1,9 +1,15 @@
-import { RECEIVE_CURRENT_USER} from '../actions/session_actions';
+import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../actions/session_actions';
 
 const cartReducer = (state = [], action) => {
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            return action.currentUser.cartProducts
+        case RECEIVE_CART_ITEM:
+            return [...state, action.cart];
+        case REMOVE_CART_ITEM:
+            let arr = [].concat(state);
+            arr.remove(action.item)
+            .then(arr => {
+                return arr;
+            })
         default:
             return state;
     }
