@@ -1,7 +1,7 @@
 import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM, REMOVE_CART_ITEMS } from '../actions/session_actions';
 
 const cartReducer = (state = [], action) => {
-    // debugger;
+    
     switch (action.type) {
         case RECEIVE_CART_ITEM:
             if (Array.isArray(action.cart)) {

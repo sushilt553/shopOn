@@ -48,3 +48,11 @@ export const getCart = userId => {
 export const getOrder = userId => {
   return axios.get(`/api/users/${userId}/order_items`);
 }
+
+export const getReward = userId => {
+  return axios.get(`/api/users/${userId}/rewards`);
+}
+
+export const updateReward = userData => {
+  return axios.patch(`/api/users/${userData.userId}`, userData);
+}

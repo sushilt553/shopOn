@@ -21,26 +21,6 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false
   },
-
-  rewards: {
-    type: Number,
-    default: 0
-  },
-
-  // reviews: [{
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Review"
-  // }],
-
-  // cartProducts: {
-  //   type: [Schema.Types.ObjectId],
-  //   ref: "Product"
-  // },
-
-  // orderProducts: {
-  //   type: [Schema.Types.ObjectId],
-  //   ref: "Product"
-  // },
   
   date: {
     type: Date,

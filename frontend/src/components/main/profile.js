@@ -9,6 +9,7 @@ class Profile extends React.Component{
         // debugger;
         this.props.fetchAllCategories();
         this.props.fetchAllProducts();
+        this.props.fetchReward(this.props.currentUser._id);
         // this.props.getCart(this.props.currentUser._id);
         this.props.getOrder(this.props.currentUser._id);
         // .then(() => this.props.history.push("/products"))
@@ -28,7 +29,7 @@ class Profile extends React.Component{
         }
 
         let products;
-
+        // debugger
         if (this.props.orders.length === 0) {
             products = <div>NO RECENT ORDERS</div>
         }else{
@@ -48,6 +49,13 @@ class Profile extends React.Component{
             )
         }
 
+        let rewards;
+        if (this.props.rewards.length > 0) {
+            rewards = this.props.rewards[0].points;
+        }else{
+            rewards = 0;
+        }
+
         return (
             <section className="profile-container">
                 <div className="profile-head">
@@ -59,7 +67,7 @@ class Profile extends React.Component{
                     {createProduct}
                     <Link className="go-shop" to={"/products"}><button>LET'S GO SHOPPING!</button></Link>
                     <p className="reward-description">Earn a point for every dollar you spend!</p>
-                    <h1 className="reward">REWARD POINTS: {this.props.rewards.toFixed(2)}</h1>
+                    <h1 className="reward">REWARD POINTS: {rewards.toFixed(2)}</h1>
                     <p className="my-orders"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;YOUR RECENT ORDERS</p>
                     <ul className="orders-list">
                         {products}

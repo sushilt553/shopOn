@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Profile from './profile';
-import { logout, getOrder, getCart } from '../../actions/session_actions';
+import { logout, getOrder, getCart, getReward } from '../../actions/session_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts} from '../../actions/product_actions';
 
@@ -20,7 +20,8 @@ const mapStateToProps = state => {
     return {
         currentUser: state.session.user,
         user: state.session.user.username,
-        rewards: state.session.user.rewards,
+        rewards: state.entities.rewards,
+        // rewards: state.session.user.rewards,
         isAdmin: state.session.user.isAdmin,
         orders: orders,
         products: Object.values(state.entities.products)
@@ -33,6 +34,7 @@ const mapDispatchToProps = dispatch => {
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
         getOrder: (userId) => dispatch(getOrder(userId)),
+        fetchReward: (userId) => dispatch(getReward(userId))
         // getCart: (userId) => dispatch(getCart(userId))
     }
 }

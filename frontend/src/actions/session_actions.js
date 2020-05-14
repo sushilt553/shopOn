@@ -8,6 +8,7 @@ export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
 export const RECEIVE_ORDER_ITEM= "RECEIVE_ORDER_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 export const REMOVE_CART_ITEMS = "REMOVE_CART_ITEMS";
+export const RECEIVE_REWARD = "RECEIVE_REWARD";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -48,6 +49,13 @@ export const removeItemFromCart = (item) => ({
   type: REMOVE_CART_ITEM,
   item
 })
+
+export const receiveReward = (reward) => {
+  return {
+    type: RECEIVE_REWARD,
+    reward
+  }
+}
 
 export const signup = user => dispatch =>
   APIUtil.signup(user)
@@ -93,7 +101,7 @@ export const addToOrder = order => dispatch => {
 
 export const removeFromCart = productData => dispatch => {
   return APIUtil.removeProduct(productData)
-  .then(() => dispatch(removeItemFromCart(productData.productId)))
+  .then(() => dispatch(removeItemFromCart(productData.product)))
 }
 
 export const getCart = userId => dispatch => {
@@ -106,6 +114,15 @@ export const getOrder = userId => dispatch => {
   .then(order => dispatch(addItemToOrder(order.data)))
 }
 
+export const getReward = userId => dispatch => {
+  return APIUtil.getReward(userId)
+  .then(reward => dispatch(receiveReward(reward.data)))
+}
+
+export const updateReward = userData => dispatch => {
+  return APIUtil.updateReward(userData)
+  .then(reward => dispatch(receiveReward(reward.data)))
+}
 // export const refetchUser = () => dispatch => {
 //   return APIUtil.getUser()
 //   .then((res) => dispatch(receiveCurrentUser(res.data)))

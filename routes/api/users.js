@@ -9,6 +9,7 @@ const User = require('../../models/User');
 const Product = require('../../models/Product');
 const Cart = require('../../models/Cart');
 const Order = require('../../models/Order');
+const Reward = require('../../models/Reward');
 const passport = require("passport");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
@@ -41,6 +42,27 @@ router.get(
       Order.find({user: req.params.id})
       .then(order => res.json(order))
     }
+)
+
+router.get(
+  "/:id/rewards",
+  (req, res) => {
+    
+    Reward.find({user: req.params.id})
+    .then(reward => res.json(reward))
+  }
+)
+
+router.patch(
+  "/:id",
+  (req, res) => {
+    Reward.findOne({user: req.params.id})
+    .then(reward => {
+      reward.points = reward.points + req.body.amount;
+      reward.save();
+      res.json(reward);
+    })
+  }
 )
 
 router.post(
@@ -181,7 +203,10 @@ router.post("/signup", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards};
+              let reward = new Reward({user: user.id})
+              reward.save();
+
+              const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin};
 
               jwt.sign(
                 payload,
@@ -221,7 +246,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin, rewards: user.rewards};
+        const payload = { _id: user.id, username: user.username, isAdmin: user.isAdmin};
 
         jwt.sign(
           payload,

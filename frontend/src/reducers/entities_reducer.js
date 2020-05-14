@@ -6,6 +6,7 @@ import searchReducer from './search_reducer';
 import reviewsReducer from './reviews_reducer';
 import cartReducer from './cart_reducer';
 import orderReducer from './order_reducer';
+import rewardsReducer from './rewards_reducer';
 
 const entitiesReducer = combineReducers({
     products: productsReducer,
@@ -14,7 +15,8 @@ const entitiesReducer = combineReducers({
     searchProducts: searchReducer,
     reviews: reviewsReducer,
     cartProducts: cartReducer,
-    orderProducts: orderReducer 
+    orderProducts: orderReducer,
+    rewards: rewardsReducer 
 })
 
 export default entitiesReducer;
