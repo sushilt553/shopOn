@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Cart from './cart';
-import { addToOrder, removeFromCart, refetchUser } from '../../actions/session_actions';
+import { addToOrder, removeFromCart, getCart } from '../../actions/session_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { fetchAllProducts } from '../../actions/product_actions';
 
@@ -8,8 +8,12 @@ const mapStateToProps = state => {
 
     let cart = [];
     if (Object.values(state.entities.products).length > 0) {
-        cart = state.session.user.cartProducts.map(product => state.entities.products[product]);
+        // cart = state.session.user.cartProducts.map(product => state.entities.products[product]);
+        if (state.entities.cartProducts.length > 0) {
+            cart = state.entities.cartProducts.map(product => state.entities.products[product.product]);
+        }
     }
+    
     return {
         cart: cart,
         user: state.session.user,
@@ -23,6 +27,7 @@ const mapDispatchToProps = dispatch => {
         removeFromCart: (productData) => dispatch(removeFromCart(productData)),
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
+        getCart: (userId) => dispatch(getCart(userId))
         // refetchUser: () => dispatch(refetchUser())
     }
 }

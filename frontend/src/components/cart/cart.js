@@ -34,6 +34,8 @@ class Cart extends React.Component{
     }
     
     componentDidMount() {
+      // debugger;
+      this.props.getCart(this.props.user._id);
       this.props.fetchAllCategories();
       this.props.fetchAllProducts();
       // .then(() => this.props.history.push("/products"))
@@ -44,7 +46,7 @@ class Cart extends React.Component{
         if (this.props.products.length === 0){
           return null;
         }
-
+        // debugger;
         const products = this.props.cart.map((product, idx) => (
           <li key={idx}>
             <div className="cart-image-container">

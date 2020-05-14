@@ -28,16 +28,17 @@ router.get(
 
 router.get(
     "/:id/cart_items",
-    (req, res) => {
-      Cart.find({"user": req.params.userId})
-      .then(cart => res.json(cart))
+    async(req, res) => {
+      debugger;
+      let cart = await Cart.find({user: req.params.id})
+      res.json(cart)
     }
 )
 
 router.get(
     "/:id/order_items",
     (req, res) => {
-      Order.find({"user": req.params.userId})
+      Order.find({"user": req.params.id})
       .then(order => res.json(order))
     }
 )
@@ -49,7 +50,7 @@ router.post(
       user: req.body.userId,
       product: req.body.productId
     })
-
+    
     cart.save()
     .then(cart => res.json(cart))
     .catch(err => res.status(404).json(err))

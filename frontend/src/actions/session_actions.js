@@ -22,10 +22,17 @@ export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
 
-export const addItemToCart = (cart) => ({
+// export const addItemToCart = (cart) => ({
+//   type: RECEIVE_CART_ITEM,
+//   cart
+// })
+
+export const addItemToCart = (cart) => {
+  return {
   type: RECEIVE_CART_ITEM,
   cart
-})
+  }
+}
 
 export const addItemToOrder = (order) => ({
   type: RECEIVE_ORDER_ITEM,
@@ -82,6 +89,16 @@ export const addToOrder = order => dispatch => {
 export const removeFromCart = productData => dispatch => {
   return APIUtil.removeProduct(productData)
   .then(() => dispatch(removeItemFromCart(productData.productId)))
+}
+
+export const getCart = userId => dispatch => {
+  return APIUtil.getCart(userId)
+  .then(cart => dispatch(addItemToCart(cart.data)))
+}
+
+export const getOrder = userId => dispatch => {
+  return APIUtil.getOrder(userId)
+  .then(order => dispatch(addItemToOrder(order.data)))
 }
 
 // export const refetchUser = () => dispatch => {
