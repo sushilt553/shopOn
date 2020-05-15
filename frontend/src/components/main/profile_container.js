@@ -34,8 +34,8 @@ const mapDispatchToProps = dispatch => {
         fetchAllProducts: () => dispatch(fetchAllProducts()),
         fetchAllCategories: () => dispatch(fetchAllCategories()),
         getOrder: (userId) => dispatch(getOrder(userId)),
-        fetchReward: (userId) => dispatch(getReward(userId))
-        // getCart: (userId) => dispatch(getCart(userId))
+        fetchReward: (userId) => dispatch(getReward(userId)),
+        getCart: (userId) => dispatch(getCart(userId))
     }
 }
 

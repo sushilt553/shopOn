@@ -3,7 +3,7 @@ import { fetchProduct, updateProduct, deleteProduct, fetchAllProducts } from '..
 import ProductShow from './product_show';
 import { fetchAllCategories } from '../../actions/category_actions';
 import { addToCart } from '../../actions/session_actions';
-import { postReview, fetchAllReviews, updateReview, deleteReview } from '../../actions/review_actions';
+import { postReview, fetchAllReviews, deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let findProduct;
