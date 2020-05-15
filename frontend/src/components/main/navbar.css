@@ -81,8 +81,7 @@
     padding-right: 15px;
 }
 
-.nav-comp-2>.account:hover,
-.nav-comp-2>.search:hover {
+.nav-comp-2>.account:hover {
     color: white;
 }
 
@@ -122,7 +121,8 @@
 
 .nav-home:hover,
 .creators:hover,
-.cart:hover, .dropdown:hover {
+.cart:hover,
+.dropdown:hover {
     /* color: #6f8ff6; */
     color: white;
 }
