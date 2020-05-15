@@ -26,7 +26,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <Route exact path="/creators" component={CreatorsContainer} />
-      <ProtectedRoute exact path="/search/:name" component={SearchContainer} />
+      <Route exact path="/search/:name" component={SearchContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
       <Route exact path={`/categories/:category`} component={CategoryProductsContainer} />
       <ProtectedRoute exact path="/products/:id/edit" component={ProductEditContainer} />
