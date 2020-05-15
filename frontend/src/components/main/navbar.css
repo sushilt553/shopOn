@@ -71,7 +71,7 @@
 }
 
 .fa-search {
-    color: #6f8ff6;
+    color: #1b2b42;
     margin-right: 0;
     padding-top: 5px;
     font-size: medium;
@@ -83,7 +83,7 @@
 
 .nav-comp-2>.account:hover,
 .nav-comp-2>.search:hover {
-    color: #6f8ff6;
+    color: white;
 }
 
 .dropdown {
@@ -96,12 +96,12 @@
 .dropdown-content {
     position: absolute;
     margin-top: 39px;
-    border-top: 3px solid;
+    /* border-top: 3px solid; */
     border-right: 1px solid;
     border-bottom: 1px solid;
     border-left: 1px solid;
     width: 200px;
-    background-color: #eeebe3;
+    background-color: #1b2b42;
     font-weight: 100;
 }
 
@@ -112,13 +112,17 @@
 
 .dropdown-list li {
     padding-left: 30px;
+    color: orange;
 }
 
 .dropdown-list li:hover {
-    color: #0b2fa8;
+    /* color: #0b2fa8; */
+    color: white;
 }
 
 .nav-home:hover,
-.creators:hover, .cart:hover {
-    color: #6f8ff6;
+.creators:hover,
+.cart:hover, .dropdown:hover {
+    /* color: #6f8ff6; */
+    color: white;
 }

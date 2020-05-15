@@ -34,7 +34,7 @@ class Cart extends React.Component{
         this.props.addToOrder({user: this.props.user._id, product: this.props.cart})
         .then(() => this.props.updateReward({userId: this.props.user._id, amount: Number(totalAmount)}))
         .then(() => this.props.history.push("/profile"))
-        .then(() => this.props.removeCartItems())
+        .then(() => this.props.removeCartItems()) 
     }
     
     componentDidMount() {

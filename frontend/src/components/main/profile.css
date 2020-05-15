@@ -27,6 +27,11 @@
     color: orange;
 }
 
+.go-shop:hover {
+    color: white;
+    /* background-color: blue; */
+}
+
 .create-a-product {
     align-self: center;
     font-weight: bold;
@@ -65,6 +70,11 @@
 
 .profile-logout {
     width: 80px;
+    align-self: flex-end;
+}
+
+.profile-logout:hover {
+    color: #1b2b42;
 }
 
 .my-account {
