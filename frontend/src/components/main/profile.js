@@ -10,7 +10,7 @@ class Profile extends React.Component{
         this.props.fetchAllCategories();
         this.props.fetchAllProducts();
         this.props.fetchReward(this.props.currentUser._id);
-        this.props.getCart(this.props.currentUser._id);
+        // this.props.getCart(this.props.currentUser._id);
         this.props.getOrder(this.props.currentUser._id);
         // .then(() => this.props.history.push("/products"))
     }
