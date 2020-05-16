@@ -65,7 +65,6 @@ const cartReducer = (state = [], action) => {
                     index = i
                 }
             }
-            // debugger;
             if (index > -1) {
                 arr.splice(index, 1);
             }
