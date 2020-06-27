@@ -24,7 +24,9 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     // debugger;
-    this.props.getCart(this.props.user._id);
+    if (this.props.currentUser){
+      this.props.getCart(this.props.user._id);
+    }
   }
 
   render() {

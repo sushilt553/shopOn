@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import ProductsIndex from './products_index';
 import { fetchAllProducts, deleteProduct } from '../../actions/product_actions';
 import { fetchAllCategories } from '../../actions/category_actions';
-import {addToCart, receiveReward} from '../../actions/session_actions';
+import {addToCart} from '../../actions/session_actions';
 import { fetchAllReviews } from '../../actions/review_actions';
 
 const mapStateToProps = state => {
